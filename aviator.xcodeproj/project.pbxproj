@@ -9,21 +9,56 @@
 /* Begin PBXBuildFile section */
 		185388142B557CD5000BCC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388132B557CD5000BCC6A /* AppDelegate.swift */; };
 		185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388152B557CD5000BCC6A /* SceneDelegate.swift */; };
-		185388182B557CD5000BCC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388172B557CD5000BCC6A /* ViewController.swift */; };
-		1853881B2B557CD5000BCC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185388192B557CD5000BCC6A /* Main.storyboard */; };
 		1853881D2B557CD8000BCC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1853881C2B557CD8000BCC6A /* Assets.xcassets */; };
 		185388202B557CD8000BCC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1853881E2B557CD8000BCC6A /* LaunchScreen.storyboard */; };
+		1853882C2B557F5A000BCC6A /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853882B2B557F5A000BCC6A /* WelcomeVC.swift */; };
+		1853882E2B557F60000BCC6A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853882D2B557F60000BCC6A /* WelcomeView.swift */; };
+		185388392B5580E0000BCC6A /* Mont-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 185388362B5580DF000BCC6A /* Mont-Bold.ttf */; };
+		1853883A2B5580E0000BCC6A /* Mont-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 185388372B5580E0000BCC6A /* Mont-SemiBold.ttf */; };
+		1853883B2B5580E0000BCC6A /* Mont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 185388382B5580E0000BCC6A /* Mont-Regular.ttf */; };
+		1853883D2B5581C9000BCC6A /* TabBarRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853883C2B5581C9000BCC6A /* TabBarRootController.swift */; };
+		1853883F2B55827B000BCC6A /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853883E2B55827B000BCC6A /* ReservationVC.swift */; };
+		185388412B558285000BCC6A /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388402B558285000BCC6A /* ReservationView.swift */; };
+		185388432B55829B000BCC6A /* GiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388422B55829B000BCC6A /* GiftVC.swift */; };
+		185388452B5582A1000BCC6A /* GiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388442B5582A1000BCC6A /* GiftView.swift */; };
+		185388472B5582AB000BCC6A /* AddNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388462B5582AB000BCC6A /* AddNewVC.swift */; };
+		185388492B5582B1000BCC6A /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388482B5582B1000BCC6A /* AddNewView.swift */; };
+		1853884B2B5582B9000BCC6A /* BonusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853884A2B5582B9000BCC6A /* BonusVC.swift */; };
+		1853884D2B5582BE000BCC6A /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853884C2B5582BE000BCC6A /* BonusView.swift */; };
+		1853884F2B5582C4000BCC6A /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853884E2B5582C4000BCC6A /* InfoVC.swift */; };
+		185388512B5582CB000BCC6A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388502B5582CB000BCC6A /* InfoView.swift */; };
+		185388542B55833A000BCC6A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 185388532B55833A000BCC6A /* SnapKit */; };
+		185388582B558B93000BCC6A /* UD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388572B558B93000BCC6A /* UD.swift */; };
+		1853885B2B558BCA000BCC6A /* Settnigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853885A2B558BC9000BCC6A /* Settnigs.swift */; };
+		1853885D2B558C17000BCC6A /* Font + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853885C2B558C17000BCC6A /* Font + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		185388102B557CD5000BCC6A /* aviator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aviator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185388132B557CD5000BCC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185388152B557CD5000BCC6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		185388172B557CD5000BCC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1853881A2B557CD5000BCC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1853881C2B557CD8000BCC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1853881F2B557CD8000BCC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185388212B557CD8000BCC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1853882B2B557F5A000BCC6A /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		1853882D2B557F60000BCC6A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		185388362B5580DF000BCC6A /* Mont-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mont-Bold.ttf"; sourceTree = "<group>"; };
+		185388372B5580E0000BCC6A /* Mont-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mont-SemiBold.ttf"; sourceTree = "<group>"; };
+		185388382B5580E0000BCC6A /* Mont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mont-Regular.ttf"; sourceTree = "<group>"; };
+		1853883C2B5581C9000BCC6A /* TabBarRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRootController.swift; sourceTree = "<group>"; };
+		1853883E2B55827B000BCC6A /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
+		185388402B558285000BCC6A /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		185388422B55829B000BCC6A /* GiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftVC.swift; sourceTree = "<group>"; };
+		185388442B5582A1000BCC6A /* GiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftView.swift; sourceTree = "<group>"; };
+		185388462B5582AB000BCC6A /* AddNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVC.swift; sourceTree = "<group>"; };
+		185388482B5582B1000BCC6A /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
+		1853884A2B5582B9000BCC6A /* BonusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusVC.swift; sourceTree = "<group>"; };
+		1853884C2B5582BE000BCC6A /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
+		1853884E2B5582C4000BCC6A /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		185388502B5582CB000BCC6A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		185388572B558B93000BCC6A /* UD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UD.swift; sourceTree = "<group>"; };
+		1853885A2B558BC9000BCC6A /* Settnigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settnigs.swift; sourceTree = "<group>"; };
+		1853885C2B558C17000BCC6A /* Font + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185388542B55833A000BCC6A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +92,9 @@
 		185388122B557CD5000BCC6A /* aviator */ = {
 			isa = PBXGroup;
 			children = (
-				185388132B557CD5000BCC6A /* AppDelegate.swift */,
-				185388152B557CD5000BCC6A /* SceneDelegate.swift */,
+				185388282B557EC9000BCC6A /* App */,
 				185388272B557CEC000BCC6A /* Flow */,
-				185388172B557CD5000BCC6A /* ViewController.swift */,
-				185388192B557CD5000BCC6A /* Main.storyboard */,
-				1853881C2B557CD8000BCC6A /* Assets.xcassets */,
-				1853881E2B557CD8000BCC6A /* LaunchScreen.storyboard */,
+				185388342B55803F000BCC6A /* Assets */,
 				185388212B557CD8000BCC6A /* Info.plist */,
 			);
 			path = aviator;
@@ -71,8 +103,133 @@
 		185388272B557CEC000BCC6A /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				1853882A2B557F2E000BCC6A /* Welcome */,
+				185388292B557EE7000BCC6A /* TabBar */,
+				1853882F2B557F75000BCC6A /* Reservation */,
+				185388302B557F8B000BCC6A /* Gift */,
+				185388312B557F97000BCC6A /* AddNew */,
+				185388322B557FB2000BCC6A /* Bonus */,
+				185388332B557FB6000BCC6A /* Info */,
+				185388552B558B5D000BCC6A /* Resourse */,
 			);
 			path = Flow;
+			sourceTree = "<group>";
+		};
+		185388282B557EC9000BCC6A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				185388132B557CD5000BCC6A /* AppDelegate.swift */,
+				185388152B557CD5000BCC6A /* SceneDelegate.swift */,
+				1853881E2B557CD8000BCC6A /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		185388292B557EE7000BCC6A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1853883C2B5581C9000BCC6A /* TabBarRootController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1853882A2B557F2E000BCC6A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				1853882B2B557F5A000BCC6A /* WelcomeVC.swift */,
+				1853882D2B557F60000BCC6A /* WelcomeView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		1853882F2B557F75000BCC6A /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				1853883E2B55827B000BCC6A /* ReservationVC.swift */,
+				185388402B558285000BCC6A /* ReservationView.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		185388302B557F8B000BCC6A /* Gift */ = {
+			isa = PBXGroup;
+			children = (
+				185388422B55829B000BCC6A /* GiftVC.swift */,
+				185388442B5582A1000BCC6A /* GiftView.swift */,
+			);
+			path = Gift;
+			sourceTree = "<group>";
+		};
+		185388312B557F97000BCC6A /* AddNew */ = {
+			isa = PBXGroup;
+			children = (
+				185388462B5582AB000BCC6A /* AddNewVC.swift */,
+				185388482B5582B1000BCC6A /* AddNewView.swift */,
+			);
+			path = AddNew;
+			sourceTree = "<group>";
+		};
+		185388322B557FB2000BCC6A /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				1853884A2B5582B9000BCC6A /* BonusVC.swift */,
+				1853884C2B5582BE000BCC6A /* BonusView.swift */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		185388332B557FB6000BCC6A /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				1853884E2B5582C4000BCC6A /* InfoVC.swift */,
+				185388502B5582CB000BCC6A /* InfoView.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		185388342B55803F000BCC6A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				185388352B558054000BCC6A /* Font */,
+				1853881C2B557CD8000BCC6A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		185388352B558054000BCC6A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				185388362B5580DF000BCC6A /* Mont-Bold.ttf */,
+				185388382B5580E0000BCC6A /* Mont-Regular.ttf */,
+				185388372B5580E0000BCC6A /* Mont-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		185388552B558B5D000BCC6A /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				185388592B558BC2000BCC6A /* Settings */,
+				185388562B558B67000BCC6A /* UserDefault */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		185388562B558B67000BCC6A /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				185388572B558B93000BCC6A /* UD.swift */,
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		185388592B558BC2000BCC6A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1853885A2B558BC9000BCC6A /* Settnigs.swift */,
+				1853885C2B558C17000BCC6A /* Font + Extension.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +248,9 @@
 			dependencies = (
 			);
 			name = aviator;
+			packageProductDependencies = (
+				185388532B55833A000BCC6A /* SnapKit */,
+			);
 			productName = aviator;
 			productReference = 185388102B557CD5000BCC6A /* aviator.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +279,9 @@
 				Base,
 			);
 			mainGroup = 185388072B557CD5000BCC6A;
+			packageReferences = (
+				185388522B55833A000BCC6A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 185388112B557CD5000BCC6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,8 +297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				185388202B557CD8000BCC6A /* LaunchScreen.storyboard in Resources */,
+				1853883B2B5580E0000BCC6A /* Mont-Regular.ttf in Resources */,
+				185388392B5580E0000BCC6A /* Mont-Bold.ttf in Resources */,
 				1853881D2B557CD8000BCC6A /* Assets.xcassets in Resources */,
-				1853881B2B557CD5000BCC6A /* Main.storyboard in Resources */,
+				1853883A2B5580E0000BCC6A /* Mont-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,23 +311,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185388182B557CD5000BCC6A /* ViewController.swift in Sources */,
+				185388512B5582CB000BCC6A /* InfoView.swift in Sources */,
+				1853882E2B557F60000BCC6A /* WelcomeView.swift in Sources */,
+				1853884B2B5582B9000BCC6A /* BonusVC.swift in Sources */,
+				1853883D2B5581C9000BCC6A /* TabBarRootController.swift in Sources */,
+				1853885D2B558C17000BCC6A /* Font + Extension.swift in Sources */,
+				1853883F2B55827B000BCC6A /* ReservationVC.swift in Sources */,
+				1853884F2B5582C4000BCC6A /* InfoVC.swift in Sources */,
 				185388142B557CD5000BCC6A /* AppDelegate.swift in Sources */,
+				185388412B558285000BCC6A /* ReservationView.swift in Sources */,
 				185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */,
+				185388472B5582AB000BCC6A /* AddNewVC.swift in Sources */,
+				185388432B55829B000BCC6A /* GiftVC.swift in Sources */,
+				185388492B5582B1000BCC6A /* AddNewView.swift in Sources */,
+				185388582B558B93000BCC6A /* UD.swift in Sources */,
+				185388452B5582A1000BCC6A /* GiftView.swift in Sources */,
+				1853884D2B5582BE000BCC6A /* BonusView.swift in Sources */,
+				1853882C2B557F5A000BCC6A /* WelcomeVC.swift in Sources */,
+				1853885B2B558BCA000BCC6A /* Settnigs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		185388192B557CD5000BCC6A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1853881A2B557CD5000BCC6A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1853881E2B557CD8000BCC6A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -304,9 +476,9 @@
 				INFOPLIST_FILE = aviator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,9 +486,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tsarevichD.aviator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -331,9 +505,9 @@
 				INFOPLIST_FILE = aviator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,9 +515,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tsarevichD.aviator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -369,6 +545,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		185388522B55833A000BCC6A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		185388532B55833A000BCC6A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 185388522B55833A000BCC6A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 185388082B557CD5000BCC6A /* Project object */;
 }
