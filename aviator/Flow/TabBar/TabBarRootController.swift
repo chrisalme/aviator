@@ -11,9 +11,9 @@ class TabBarRootController: UITabBarController {
         
         
         UITabBar.appearance().unselectedItemTintColor = .white
-        UITabBar.appearance().tintColor = .red
-        UITabBar.appearance().backgroundColor = .clear.withAlphaComponent(0.08)
-        
+        UITabBar.appearance().tintColor = .customRed
+        UITabBar.appearance().backgroundColor = .clear.withAlphaComponent(0.35)
+
         
         let reservVC = ReservationVC()
         buildConfig(reservVC, title: "Reservation", imageName: "reserv_Btn")
@@ -41,5 +41,6 @@ class TabBarRootController: UITabBarController {
     private func buildConfig(_ vc: UIViewController, title: String, imageName: String) {
         vc.tabBarItem.title = title
         vc.tabBarItem.image = UIImage(named: imageName)
+        vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 6)
     }
 }

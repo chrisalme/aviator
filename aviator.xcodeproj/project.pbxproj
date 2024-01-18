@@ -31,6 +31,14 @@
 		185388582B558B93000BCC6A /* UD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388572B558B93000BCC6A /* UD.swift */; };
 		1853885B2B558BCA000BCC6A /* Settnigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853885A2B558BC9000BCC6A /* Settnigs.swift */; };
 		1853885D2B558C17000BCC6A /* Font + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853885C2B558C17000BCC6A /* Font + Extension.swift */; };
+		18E6E3772B596D400076DBDF /* TestBeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3762B596D400076DBDF /* TestBeck.swift */; };
+		18E6E3792B596D580076DBDF /* GiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3782B596D580076DBDF /* GiftCell.swift */; };
+		18E6E37B2B596D640076DBDF /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E37A2B596D640076DBDF /* GiftModel.swift */; };
+		18E6E37E2B596D7C0076DBDF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E37D2B596D7C0076DBDF /* DetailView.swift */; };
+		18E6E3802B596D820076DBDF /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E37F2B596D820076DBDF /* DetailVC.swift */; };
+		18E6E3832B596DA90076DBDF /* CodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3822B596DA90076DBDF /* CodeVC.swift */; };
+		18E6E3852B596DAF0076DBDF /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3842B596DAF0076DBDF /* CodeView.swift */; };
+		18E6E3872B596DBF0076DBDF /* DataGifts in Resources */ = {isa = PBXBuildFile; fileRef = 18E6E3862B596DBF0076DBDF /* DataGifts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +67,14 @@
 		185388572B558B93000BCC6A /* UD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UD.swift; sourceTree = "<group>"; };
 		1853885A2B558BC9000BCC6A /* Settnigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settnigs.swift; sourceTree = "<group>"; };
 		1853885C2B558C17000BCC6A /* Font + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + Extension.swift"; sourceTree = "<group>"; };
+		18E6E3762B596D400076DBDF /* TestBeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBeck.swift; sourceTree = "<group>"; };
+		18E6E3782B596D580076DBDF /* GiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCell.swift; sourceTree = "<group>"; };
+		18E6E37A2B596D640076DBDF /* GiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		18E6E37D2B596D7C0076DBDF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		18E6E37F2B596D820076DBDF /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		18E6E3822B596DA90076DBDF /* CodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVC.swift; sourceTree = "<group>"; };
+		18E6E3842B596DAF0076DBDF /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		18E6E3862B596DBF0076DBDF /* DataGifts */ = {isa = PBXFileReference; lastKnownFileType = text; path = DataGifts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +172,10 @@
 			children = (
 				185388422B55829B000BCC6A /* GiftVC.swift */,
 				185388442B5582A1000BCC6A /* GiftView.swift */,
+				18E6E3782B596D580076DBDF /* GiftCell.swift */,
+				18E6E37A2B596D640076DBDF /* GiftModel.swift */,
+				18E6E3862B596DBF0076DBDF /* DataGifts */,
+				18E6E37C2B596D6D0076DBDF /* Detail */,
 			);
 			path = Gift;
 			sourceTree = "<group>";
@@ -228,8 +248,28 @@
 			children = (
 				1853885A2B558BC9000BCC6A /* Settnigs.swift */,
 				1853885C2B558C17000BCC6A /* Font + Extension.swift */,
+				18E6E3762B596D400076DBDF /* TestBeck.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		18E6E37C2B596D6D0076DBDF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				18E6E37F2B596D820076DBDF /* DetailVC.swift */,
+				18E6E37D2B596D7C0076DBDF /* DetailView.swift */,
+				18E6E3812B596D9A0076DBDF /* Code */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		18E6E3812B596D9A0076DBDF /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				18E6E3822B596DA90076DBDF /* CodeVC.swift */,
+				18E6E3842B596DAF0076DBDF /* CodeView.swift */,
+			);
+			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +338,7 @@
 			files = (
 				185388202B557CD8000BCC6A /* LaunchScreen.storyboard in Resources */,
 				1853883B2B5580E0000BCC6A /* Mont-Regular.ttf in Resources */,
+				18E6E3872B596DBF0076DBDF /* DataGifts in Resources */,
 				185388392B5580E0000BCC6A /* Mont-Bold.ttf in Resources */,
 				1853881D2B557CD8000BCC6A /* Assets.xcassets in Resources */,
 				1853883A2B5580E0000BCC6A /* Mont-SemiBold.ttf in Resources */,
@@ -311,15 +352,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E6E37B2B596D640076DBDF /* GiftModel.swift in Sources */,
 				185388512B5582CB000BCC6A /* InfoView.swift in Sources */,
 				1853882E2B557F60000BCC6A /* WelcomeView.swift in Sources */,
+				18E6E3852B596DAF0076DBDF /* CodeView.swift in Sources */,
 				1853884B2B5582B9000BCC6A /* BonusVC.swift in Sources */,
 				1853883D2B5581C9000BCC6A /* TabBarRootController.swift in Sources */,
+				18E6E37E2B596D7C0076DBDF /* DetailView.swift in Sources */,
 				1853885D2B558C17000BCC6A /* Font + Extension.swift in Sources */,
 				1853883F2B55827B000BCC6A /* ReservationVC.swift in Sources */,
 				1853884F2B5582C4000BCC6A /* InfoVC.swift in Sources */,
 				185388142B557CD5000BCC6A /* AppDelegate.swift in Sources */,
 				185388412B558285000BCC6A /* ReservationView.swift in Sources */,
+				18E6E3832B596DA90076DBDF /* CodeVC.swift in Sources */,
 				185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */,
 				185388472B5582AB000BCC6A /* AddNewVC.swift in Sources */,
 				185388432B55829B000BCC6A /* GiftVC.swift in Sources */,
@@ -328,7 +373,10 @@
 				185388452B5582A1000BCC6A /* GiftView.swift in Sources */,
 				1853884D2B5582BE000BCC6A /* BonusView.swift in Sources */,
 				1853882C2B557F5A000BCC6A /* WelcomeVC.swift in Sources */,
+				18E6E3802B596D820076DBDF /* DetailVC.swift in Sources */,
+				18E6E3772B596D400076DBDF /* TestBeck.swift in Sources */,
 				1853885B2B558BCA000BCC6A /* Settnigs.swift in Sources */,
+				18E6E3792B596D580076DBDF /* GiftCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

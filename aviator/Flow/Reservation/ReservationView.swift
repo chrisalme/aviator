@@ -7,7 +7,11 @@ import UIKit
 
 class ReservationView: UIView {
     
-
+    private lazy var backView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .backgroundsOne
+        return imageView
+    }()
     
     
     override init(frame: CGRect) {
@@ -21,11 +25,14 @@ class ReservationView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = .cyan
+        [backView] .forEach(addSubview(_:))
     }
     
     private func setupConstraints() {
         
+        backView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
 }
 

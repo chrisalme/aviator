@@ -1,0 +1,39 @@
+
+[{
+        "id": "feec36a0-f27d-46b4-9d2a-9e52161f6ab4",
+        "imageGifts": "aviator_One",
+        "title": "One Fly",
+        "price": "12",
+        "description": "A new star has appeared among the dense green jungle of your store - meet Brilliant Gift! \nScan special QR codes."
+    },
+    {
+        "id": "b8a74a5c-b397-49bb-8d1b-a35fe7142101",
+        "imageGifts": "aviator_Two",
+        "title": "Two Fly",
+        "price": "15",
+        "description": "Excellent 15% discount using QR-cod"
+    },
+    {
+        "id": "dd1e2638-d931-4584-a2b1-5d79171135d6",
+        "imageGifts": "aviator_Three",
+        "title": "Three Fly",
+        "price": "49",
+        "description": "In honor of March 8th there will be an amazing drawing, scan QR-code"
+        
+    },
+    {
+        "id": "b616f45f-0d8b-4d53-8ee8-58348e0dcfd9",
+        "imageGifts": "aviator_Four",
+        "title": "Four Fly",
+        "price": "99",
+        "description": "Wonderful and luxurious gifts are waiting for you in our store, quickly scan QR-code and you will be pleasantly surprised"
+    },
+    {
+        "id": "c52db6c5-c795-4ef1-b817-0784c701fe08",
+        "imageGifts": "aviator_Five",
+        "title": "Five Fly",
+        "price": "119",
+        "description": "The Deluxe Collection offers you luxury products inspired by the wild and crafted using high quality materials. Each item in this collection is not just a purchase, but an investment in your style and confidence."
+ }
+]
+

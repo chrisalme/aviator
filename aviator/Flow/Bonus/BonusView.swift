@@ -8,7 +8,11 @@ import UIKit
 class BonusView: UIView {
     
 
-    
+    private lazy var backView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .backgroundsOne
+        return imageView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,10 +25,14 @@ class BonusView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = .orange
+        [backView] .forEach(addSubview(_:))
     }
     
     private func setupConstraints() {
         
+        backView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
     }
 }

@@ -7,7 +7,11 @@ import UIKit
 
 class AddNewView: UIView {
     
-
+    private lazy var backView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .backgroundsOne
+        return imageView
+    }()
     
     
     override init(frame: CGRect) {
@@ -21,10 +25,13 @@ class AddNewView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = .green
+        [backView] .forEach(addSubview(_:))
     }
     
     private func setupConstraints() {
-        
+        backView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
     }
 }
