@@ -30,12 +30,17 @@ class CodeView: UIView {
 
     private(set) lazy var qrConteiner: UIView = {
         let view = UIView()
-        let blurEffect = UIBlurEffect(style: .extraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = view.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurView.alpha = 0.2
-        view.addSubview(blurView)
+//        let blurEffect = UIBlurEffect(style: .extraLight)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+        let blurEffectNight = UIBlurEffect(style: .systemThinMaterialDark)
+        let blurViewNight = UIVisualEffectView(effect: blurEffectNight)
+//        blurView.frame = view.bounds
+//        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        blurView.alpha = 0.7
+        blurViewNight.frame = view.bounds
+        blurViewNight.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurViewNight.alpha = 0.7
+        view.addSubview(blurViewNight)
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.white.withAlphaComponent(0.08).cgColor
         view.layer.cornerRadius = 12
