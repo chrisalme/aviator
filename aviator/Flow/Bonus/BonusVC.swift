@@ -10,7 +10,7 @@ class BonusVC: UIViewController {
     
     private var isTime: Bool = true
     private var spin: CGFloat = 0
-    private var livesCounts: Int = 0
+    private var cointsCount: Int = 0
 
     private var contentView: BonusView {
         view as? BonusView ?? BonusView()
@@ -27,7 +27,7 @@ class BonusVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        goDailyScreen()
+        goDailyScreen()
     }
     
     private func tappedButtons() {
@@ -51,7 +51,7 @@ class BonusVC: UIViewController {
     
     private func presentDailyPrizeVC() {
         let vc = BonusPrizeVC()
-        vc.total = livesCounts
+        vc.total = cointsCount
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
@@ -66,33 +66,34 @@ class BonusVC: UIViewController {
         
         switch randomSectorAngle {
         case 22:
-            livesCounts = contentView.segmentValues[5]
+            cointsCount = contentView.segmentValues[5]
         print("Sector 1")
         case 67:
-            livesCounts = contentView.segmentValues[4]
+            cointsCount = contentView.segmentValues[4]
             print("Sector 2")
         case 112:
-            livesCounts = contentView.segmentValues[3]
+            cointsCount = contentView.segmentValues[3]
             print("Sector 3")
         case 157:
-            livesCounts = contentView.segmentValues[2]
+            cointsCount = contentView.segmentValues[2]
             print("Sector 4")
         case 202:
-            livesCounts = contentView.segmentValues[1]
+            cointsCount = contentView.segmentValues[1]
             print("Sector 5")
         case 247:
-            livesCounts = contentView.segmentValues[0]
+            cointsCount = contentView.segmentValues[0]
             print("Sector 6")
         case 292:
-            livesCounts = contentView.segmentValues[7]
+            cointsCount = contentView.segmentValues[7]
             print("Sector 7")
         case 337:
-            livesCounts = contentView.segmentValues[6]
+            cointsCount = contentView.segmentValues[6]
             print("Sector 8")
         default:
             break
         }
-        
+        UD.shared.balance += cointsCount
+
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotationAnimation.toValue = CGFloat.pi * 12 + randomRotation
@@ -118,56 +119,56 @@ class BonusVC: UIViewController {
 
 extension BonusVC {
     
-//    func goDailyScreen() {
-//        if let lastVisitDate = UD.shared.lastBonusDate {
-//            let calendar = Calendar.current
-//            if let hours = calendar.dateComponents([.hour], from: lastVisitDate, to: Date()).hour, hours < 24 {
-//                isTime = true
-//                contentView.timerView.isHidden = false
-//                startCountdownTimer()
-//            } else {
-//                isTime = false
-//                contentView.timerView.isHidden = true
-//            }
-//        }
-//    }
+    func goDailyScreen() {
+        if let lastVisitDate = UD.shared.lastBonusDate {
+            let calendar = Calendar.current
+            if let hours = calendar.dateComponents([.hour], from: lastVisitDate, to: Date()).hour, hours < 24 {
+                isTime = true
+                contentView.timerView.isHidden = false
+                startCountdownTimer()
+            } else {
+                isTime = false
+                contentView.timerView.isHidden = true
+            }
+        }
+    }
     
-//    func startCountdownTimer() {
-//        let calendar = Calendar.current
-//        
-//        guard let lastVisitDate = UD.shared.lastBonusDate,
-//              let targetDate = calendar.date(byAdding: .day, value: 1, to: lastVisitDate) else {
-//            return
-//        }
-//        
-//        let now = Date()
-//        if now < targetDate {
-//            let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
-//            let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
+    func startCountdownTimer() {
+        let calendar = Calendar.current
+        
+        guard let lastVisitDate = UD.shared.lastBonusDate,
+              let targetDate = calendar.date(byAdding: .day, value: 1, to: lastVisitDate) else {
+            return
+        }
+        
+        let now = Date()
+        if now < targetDate {
+            let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
+            let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
 //            let attrString = CustomTextStyle.labelAttrString.attributedString(with: "\(timeString)")
 //            contentView.timecountLabel.attributedText = attrString
-//
-//            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-//                guard let self = self else {
-//                    timer.invalidate()
-//                    return
-//                }
-//                
-//                let now = Date()
-//                if now >= targetDate {
-//                    UserDefaults.standard.set(now, forKey: "LastVisitDate")
-//                    self.dismiss(animated: true, completion: nil)
-//                    timer.invalidate()
-//                } else {
-//                    let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
-//                    let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
-//                    self.contentView.timecountLabel.text = "\(timeString)"
-//                }
-//            }
-//        } else {
-//            UserDefaults.standard.set(now, forKey: "LastVisitDate")
-//        }
-//    }
+
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+                guard let self = self else {
+                    timer.invalidate()
+                    return
+                }
+                
+                let now = Date()
+                if now >= targetDate {
+                    UserDefaults.standard.set(now, forKey: "LastVisitDate")
+                    self.dismiss(animated: true, completion: nil)
+                    timer.invalidate()
+                } else {
+                    let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
+                    let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
+                    self.contentView.timecountLabel.text = "\(timeString)"
+                }
+            }
+        } else {
+            UserDefaults.standard.set(now, forKey: "LastVisitDate")
+        }
+    }
     
 }
 

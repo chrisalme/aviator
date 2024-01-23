@@ -19,7 +19,17 @@ class InfoVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tappedButtons()
     }
     
+    private func tappedButtons() {
+        contentView.personBtn.addTarget(self, action: #selector(personTapped), for: .touchUpInside)
+    }
+    
+    @objc func personTapped() {
+        let profileVc = ProfileVC()
+        profileVc.modalPresentationStyle = .fullScreen
+        present(profileVc, animated: true)
+
+    }
 }

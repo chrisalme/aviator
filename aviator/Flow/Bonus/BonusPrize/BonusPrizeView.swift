@@ -20,8 +20,6 @@ class BonusPrizeView: UIView {
         return label
     }()
     
-
-    
     private(set) lazy var scoreLifeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center

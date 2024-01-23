@@ -13,6 +13,12 @@ class InfoView: UIView {
         return imageView
     }()
     
+    private(set) lazy var personBtn: UIButton = {
+        let button = UIButton()
+        button.setImage(.personBtn, for: .normal)
+        return button
+    }()
+
     private(set) var subTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "\(Settings.appTitle)"
@@ -79,13 +85,19 @@ class InfoView: UIView {
         infoConteinerView.addSubview(subTitleLabel)
         infoConteinerView.addSubview(contentLabel)
         infoConteinerView.addSubview(infoContentView)
-
+        addSubview(personBtn)
+        
     }
     
     private func setupConstraints() {
      
         backView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+        }
+        
+        personBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-24)
+            make.top.equalToSuperview().inset(56)
         }
         
         infoScrollView.snp.makeConstraints { make in

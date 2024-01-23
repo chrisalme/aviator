@@ -42,6 +42,8 @@
 		18E6E3892B5FB5880076DBDF /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3882B5FB5880076DBDF /* WheelView.swift */; };
 		18E6E38C2B5FB6500076DBDF /* BonusPrizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E38B2B5FB6500076DBDF /* BonusPrizeVC.swift */; };
 		18E6E38E2B5FB6570076DBDF /* BonusPrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E38D2B5FB6570076DBDF /* BonusPrizeView.swift */; };
+		18E6E3912B5FF0780076DBDF /* ProfiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3902B5FF0780076DBDF /* ProfiveView.swift */; };
+		18E6E3932B5FF0820076DBDF /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3922B5FF0820076DBDF /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		18E6E3882B5FB5880076DBDF /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		18E6E38B2B5FB6500076DBDF /* BonusPrizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPrizeVC.swift; sourceTree = "<group>"; };
 		18E6E38D2B5FB6570076DBDF /* BonusPrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPrizeView.swift; sourceTree = "<group>"; };
+		18E6E3902B5FF0780076DBDF /* ProfiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiveView.swift; sourceTree = "<group>"; };
+		18E6E3922B5FF0820076DBDF /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 			children = (
 				1853884E2B5582C4000BCC6A /* InfoVC.swift */,
 				185388502B5582CB000BCC6A /* InfoView.swift */,
+				18E6E38F2B5FF06C0076DBDF /* Profile */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -287,6 +292,15 @@
 				18E6E38D2B5FB6570076DBDF /* BonusPrizeView.swift */,
 			);
 			path = BonusPrize;
+			sourceTree = "<group>";
+		};
+		18E6E38F2B5FF06C0076DBDF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				18E6E3922B5FF0820076DBDF /* ProfileVC.swift */,
+				18E6E3902B5FF0780076DBDF /* ProfiveView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E6E3932B5FF0820076DBDF /* ProfileVC.swift in Sources */,
 				18E6E37B2B596D640076DBDF /* GiftModel.swift in Sources */,
 				185388512B5582CB000BCC6A /* InfoView.swift in Sources */,
 				1853882E2B557F60000BCC6A /* WelcomeView.swift in Sources */,
@@ -382,6 +397,7 @@
 				185388142B557CD5000BCC6A /* AppDelegate.swift in Sources */,
 				185388412B558285000BCC6A /* ReservationView.swift in Sources */,
 				18E6E3832B596DA90076DBDF /* CodeVC.swift in Sources */,
+				18E6E3912B5FF0780076DBDF /* ProfiveView.swift in Sources */,
 				185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */,
 				185388472B5582AB000BCC6A /* AddNewVC.swift in Sources */,
 				18E6E38E2B5FB6570076DBDF /* BonusPrizeView.swift in Sources */,
