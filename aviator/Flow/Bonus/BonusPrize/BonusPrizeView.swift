@@ -9,7 +9,7 @@ class BonusPrizeView: UIView {
     
     private lazy var backView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.backgroundsWelcome
+        imageView.image = UIImage.backgroundsTimer
         return imageView
     }()
     
@@ -23,7 +23,7 @@ class BonusPrizeView: UIView {
     private(set) lazy var scoreLifeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .customFont(font: .mont, style: .bold, size: 40)
+        label.font = .customFont(font: .mont, style: .bold, size: 52)
         label.textColor = .white
         label.numberOfLines = 0
         return label
@@ -60,18 +60,20 @@ class BonusPrizeView: UIView {
         }
         
         winLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(scoreLifeLabel.snp.top).offset(-100)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(72)
             make.centerX.equalToSuperview()
         }
         
         scoreLifeLabel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.top.equalTo(winLabel.snp.bottom).offset(60)
+            make.centerX.equalToSuperview()
         }
         
         thanksButton.snp.makeConstraints { (make) in
-            make.top.equalTo(scoreLifeLabel.snp.bottom).offset(100)
-            make.left.right.equalToSuperview().inset(24)
-            make.height.equalTo(66)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(188)
+            make.height.equalTo(48)
         }
     }
 }

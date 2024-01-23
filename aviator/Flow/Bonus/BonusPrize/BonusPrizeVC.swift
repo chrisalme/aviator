@@ -28,7 +28,7 @@ class BonusPrizeVC: UIViewController {
     }
     
     private func configureLabel() {
-        contentView.scoreLifeLabel.text = "+\(total)\n coints"
+        contentView.scoreLifeLabel.text = "+\(total)\n Coints"
     }
 
     @objc func closeView() {

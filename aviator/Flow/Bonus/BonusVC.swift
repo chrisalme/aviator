@@ -27,12 +27,11 @@ class BonusVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        goDailyScreen()
+        checkedToDate()
     }
     
     private func tappedButtons() {
         contentView.goButton.addTarget(self, action: #selector(goButtonTapped), for: .touchUpInside)
-//        contentView.homeBtn.addTarget(self, action: #selector(goButtonTappedHome), for: .touchUpInside)
     }
 
     @objc func goButtonTappedHome() {
@@ -119,7 +118,7 @@ class BonusVC: UIViewController {
 
 extension BonusVC {
     
-    func goDailyScreen() {
+    func checkedToDate() {
         if let lastVisitDate = UD.shared.lastBonusDate {
             let calendar = Calendar.current
             if let hours = calendar.dateComponents([.hour], from: lastVisitDate, to: Date()).hour, hours < 24 {
@@ -162,7 +161,7 @@ extension BonusVC {
                 } else {
                     let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
                     let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
-                    self.contentView.timecountLabel.text = "\(timeString)"
+                    self.contentView.timeCountLabel.text = "\(timeString)"
                 }
             }
         } else {

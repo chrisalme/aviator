@@ -8,7 +8,7 @@ import SnapKit
 
 class BonusView: UIView {
     
-    let segmentValues = [3, 5, 10, 2, 0, 15, 5, 7]
+    let segmentValues = [3, 5, 10, 2, 1, 15, 5, 7]
     private  var circles: [WheelView] = []
     private  let count = 8
     private let colors: [UIColor] = [.clear, .clear, .clear, .clear, .clear, .clear, .clear, .clear]
@@ -84,7 +84,7 @@ class BonusView: UIView {
         return imageView
     }()
     
-    private(set) lazy var timecountLabel: UILabel = {
+    private(set) lazy var timeCountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
@@ -110,12 +110,12 @@ class BonusView: UIView {
         dailyBonusView.addSubview(goButton)
         dailyBonusView.addSubview(circleContainer)
         circleContainer.addSubview(circleImage)
-        circleImage.addSubview(aviatorImage)
+        dailyBonusView.addSubview(aviatorImage)
         dailyBonusView.addSubview(selectImageView)
         addSubview(timerView)
         timerView.addSubview(backTimerView)
         timerView.addSubview(titleTimeLabel)
-        timerView.addSubview(timecountLabel)
+        timerView.addSubview(timeCountLabel)
         
     }
     
@@ -141,7 +141,8 @@ class BonusView: UIView {
         }
         
         aviatorImage.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(24)
         }
 
         selectImageView.snp.makeConstraints { (make) in
@@ -170,7 +171,7 @@ class BonusView: UIView {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(60)
         }
         
-        timecountLabel.snp.makeConstraints { make in
+        timeCountLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(titleTimeLabel.snp.bottom).offset(40)
         }
