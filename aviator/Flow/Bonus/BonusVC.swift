@@ -27,7 +27,7 @@ class BonusVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkedToDate()
+//        checkedToDate()
     }
     
     private func tappedButtons() {

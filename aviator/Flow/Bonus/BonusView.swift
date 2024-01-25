@@ -8,7 +8,7 @@ import SnapKit
 
 class BonusView: UIView {
     
-    let segmentValues = [3, 5, 10, 2, 1, 15, 5, 7]
+    let segmentValues = [10, 100, 10, 20, 30, 10, 50, 20]
     private  var circles: [WheelView] = []
     private  let count = 8
     private let colors: [UIColor] = [.clear, .clear, .clear, .clear, .clear, .clear, .clear, .clear]
