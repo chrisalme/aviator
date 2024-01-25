@@ -17,7 +17,7 @@ class GiftView: UIView {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
-        tableView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: -56, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -56, right: 0)
         tableView.register(GiftCell.self, forCellReuseIdentifier: GiftCell.reuseId)
         tableView.separatorStyle = .none
         return tableView

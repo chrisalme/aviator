@@ -44,6 +44,11 @@
 		18E6E38E2B5FB6570076DBDF /* BonusPrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E38D2B5FB6570076DBDF /* BonusPrizeView.swift */; };
 		18E6E3912B5FF0780076DBDF /* ProfiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3902B5FF0780076DBDF /* ProfiveView.swift */; };
 		18E6E3932B5FF0820076DBDF /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3922B5FF0820076DBDF /* ProfileVC.swift */; };
+		18E6E3952B628B930076DBDF /* EventData in Resources */ = {isa = PBXBuildFile; fileRef = 18E6E3942B628B930076DBDF /* EventData */; };
+		18E6E3972B628C3A0076DBDF /* AddNewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3962B628C3A0076DBDF /* AddNewModel.swift */; };
+		18E6E3992B628CEB0076DBDF /* AddNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3982B628CEB0076DBDF /* AddNewCell.swift */; };
+		18E6E39C2B62C4E70076DBDF /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E39B2B62C4E70076DBDF /* EventView.swift */; };
+		18E6E39E2B62C4ED0076DBDF /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E39D2B62C4ED0076DBDF /* EventVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +90,11 @@
 		18E6E38D2B5FB6570076DBDF /* BonusPrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPrizeView.swift; sourceTree = "<group>"; };
 		18E6E3902B5FF0780076DBDF /* ProfiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiveView.swift; sourceTree = "<group>"; };
 		18E6E3922B5FF0820076DBDF /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		18E6E3942B628B930076DBDF /* EventData */ = {isa = PBXFileReference; lastKnownFileType = text; path = EventData; sourceTree = "<group>"; };
+		18E6E3962B628C3A0076DBDF /* AddNewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewModel.swift; sourceTree = "<group>"; };
+		18E6E3982B628CEB0076DBDF /* AddNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCell.swift; sourceTree = "<group>"; };
+		18E6E39B2B62C4E70076DBDF /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		18E6E39D2B62C4ED0076DBDF /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +205,10 @@
 			children = (
 				185388462B5582AB000BCC6A /* AddNewVC.swift */,
 				185388482B5582B1000BCC6A /* AddNewView.swift */,
+				18E6E3982B628CEB0076DBDF /* AddNewCell.swift */,
+				18E6E3962B628C3A0076DBDF /* AddNewModel.swift */,
+				18E6E3942B628B930076DBDF /* EventData */,
+				18E6E39A2B62C4B60076DBDF /* Event */,
 			);
 			path = AddNew;
 			sourceTree = "<group>";
@@ -303,6 +317,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		18E6E39A2B62C4B60076DBDF /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				18E6E39D2B62C4ED0076DBDF /* EventVC.swift */,
+				18E6E39B2B62C4E70076DBDF /* EventView.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E6E3952B628B930076DBDF /* EventData in Resources */,
 				185388202B557CD8000BCC6A /* LaunchScreen.storyboard in Resources */,
 				1853883B2B5580E0000BCC6A /* Mont-Regular.ttf in Resources */,
 				18E6E3872B596DBF0076DBDF /* DataGifts in Resources */,
@@ -406,12 +430,16 @@
 				185388582B558B93000BCC6A /* UD.swift in Sources */,
 				185388452B5582A1000BCC6A /* GiftView.swift in Sources */,
 				18E6E38C2B5FB6500076DBDF /* BonusPrizeVC.swift in Sources */,
+				18E6E3972B628C3A0076DBDF /* AddNewModel.swift in Sources */,
+				18E6E39C2B62C4E70076DBDF /* EventView.swift in Sources */,
 				18E6E3892B5FB5880076DBDF /* WheelView.swift in Sources */,
 				1853884D2B5582BE000BCC6A /* BonusView.swift in Sources */,
 				1853882C2B557F5A000BCC6A /* WelcomeVC.swift in Sources */,
 				18E6E3802B596D820076DBDF /* DetailVC.swift in Sources */,
 				18E6E3772B596D400076DBDF /* TestBeck.swift in Sources */,
 				1853885B2B558BCA000BCC6A /* Settnigs.swift in Sources */,
+				18E6E39E2B62C4ED0076DBDF /* EventVC.swift in Sources */,
+				18E6E3992B628CEB0076DBDF /* AddNewCell.swift in Sources */,
 				18E6E3792B596D580076DBDF /* GiftCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

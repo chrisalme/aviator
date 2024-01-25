@@ -36,4 +36,29 @@ class TestBeck {
             errorComletion(error)
         }
     }
+    
+    func readFromAddNewData(successCompletion: @escaping ([AddNewModel]) -> Void, errorComletion: @escaping (Error) -> Void) {
+        guard let url = Bundle.main.url(forResource: "EventData", withExtension: nil) else {
+            print("Failed to locate  in bundle.")
+            errorComletion(ModelsError.unknown)
+            
+            return
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            print("Failed to load  from bundle.")
+            errorComletion(ModelsError.noData)
+            
+            return
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            let model = try decoder.decode([AddNewModel].self, from: data)
+                successCompletion(model)
+                print(model)
+        }catch{
+            print("error", error)
+            errorComletion(error)
+        }
+    }
 }

@@ -17,6 +17,7 @@ class BonusPrizeView: UIView {
         let label = UILabel()
         label.text = "Congratilations"
         label.font = UIFont.customFont(font: .mont, style: .bold, size: 40)
+        label.textColor = .white
         return label
     }()
     

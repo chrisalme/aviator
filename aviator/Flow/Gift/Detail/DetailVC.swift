@@ -30,12 +30,7 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        contentView.giftDetailImage.image = UIImage(named: model.imageGifts)
-        contentView.subTitleGiftLabel.text = model.title
-        contentView.creditsScoreLabel.text = model.price
-        contentView.descriptionBodyLabel.text = model.description
-        
+        configView()
         setupBackButton()
     }
     
@@ -43,6 +38,15 @@ class DetailVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
         tabBarController?.tabBar.isHidden = true
+    }
+    
+    
+    private func configView() {
+        contentView.giftDetailImage.image = UIImage(named: model.imageGifts)
+        contentView.subTitleGiftLabel.text = model.title
+        contentView.creditsScoreLabel.text = model.price
+        contentView.descriptionBodyLabel.text = model.description
+
     }
     
         func setupBackButton() {

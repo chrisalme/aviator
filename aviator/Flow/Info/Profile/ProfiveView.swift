@@ -46,6 +46,7 @@ class ProfileView: UIView,UITextFieldDelegate {
         let label = UILabel()
         label.text = "Balance: \(UD.shared.balance)"
         label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 40)
+        label.textColor = .white
         return label
     }()
 

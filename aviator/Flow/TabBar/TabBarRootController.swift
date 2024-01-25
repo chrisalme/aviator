@@ -24,7 +24,8 @@ class TabBarRootController: UITabBarController {
         buildConfig(giftNavController, title: "Gift", imageName: "gift_Btn")
         
         let addNewVC = AddNewVC()
-        buildConfig(addNewVC, title: "+", imageName: "addNew_Btn")
+        let addNewNavController = UINavigationController(rootViewController: addNewVC)
+        buildConfig(addNewNavController, title: "+", imageName: "addNew_Btn")
         
         let bonusVC = BonusVC()
         let bonusNavController = UINavigationController(rootViewController: bonusVC)
@@ -34,7 +35,7 @@ class TabBarRootController: UITabBarController {
         buildConfig(infoVC, title: "Info", imageName: "info_Btn")
         
         
-        viewControllers = [reservVC,giftNavController,addNewVC,bonusNavController,infoVC]
+        viewControllers = [reservVC,giftNavController,addNewNavController,bonusNavController,infoVC]
         
     }
     

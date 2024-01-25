@@ -1,0 +1,65 @@
+[{
+    "id": "123",
+    "event": "Poker",
+    "startData": "21.12.24",
+    "duration": "14:00-15:00",
+    "reservations": [
+        {
+            "id": 1,
+            "status": "free"
+        },
+        {
+            "id": 2,
+            "status": "free"
+        },
+        {
+            "id": 3,
+            "status": "reserved"
+        },
+        {
+            "id": 4,
+            "status": "reserved"
+        }
+    ]
+},
+{
+    "id": "345",
+    "event": "Black Jack",
+    "startData": "22.12.24",
+    "duration": "13:00-14:00",
+    "reservations": [
+        {
+            "id": 1,
+            "status": "free"
+        },
+        {
+            "id": 2,
+            "status": "reserved"
+        },
+        {
+            "id": 3,
+            "status": "free"
+        }
+    ]
+},
+{
+    "id": "456",
+    "event": "Poker",
+    "startData": "23.12.24",
+    "duration": "10:00-11:00",
+    "reservations": [
+        {
+            "id": 1,
+            "status": "reserved"
+        },
+        {
+            "id": 2,
+            "status": "free"
+        },
+        {
+            "id": 3,
+            "status": "free"
+        }
+    ]
+}]
+

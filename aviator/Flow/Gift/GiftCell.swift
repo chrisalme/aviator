@@ -75,7 +75,7 @@ class GiftCell: UITableViewCell {
     
     func setupConstraints() {
         giftDetailUseConteiner.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(12)
             make.left.right.bottom.equalToSuperview()
         }
         
