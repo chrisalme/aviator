@@ -42,6 +42,7 @@ class EventVC: UIViewController {
         contentView.titleEventLabel.text = model.event
         contentView.dateScoreLabel.text = model.startData
         contentView.timeLabel.text = model.duration
+        
     }
         func setupBackButton() {
 

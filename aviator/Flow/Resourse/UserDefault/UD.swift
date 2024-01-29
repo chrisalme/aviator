@@ -62,6 +62,16 @@ class UD {
         }
     }
     
+    var userID: Int? {
+        get {
+            return defaults.object(forKey: "userID") as? Int
+        }
+        set {
+            defaults.set(newValue, forKey: "userID")
+        }
+    }
+
+    
 }
     
 extension UD {

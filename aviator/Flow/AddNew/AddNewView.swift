@@ -17,7 +17,7 @@ class AddNewView: UIView {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
-        tableView.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: -56, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -56, right: 0)
         tableView.register(AddNewCell.self, forCellReuseIdentifier: AddNewCell.reuseId)
         tableView.separatorStyle = .none
         return tableView

@@ -18,11 +18,11 @@ struct AddNewModel: Decodable {
 
 struct EventReservation: Decodable {
     let id: Int
-    let status: String
+    let status: EventStatus
     
 }
 
-enum EventStatus {
+enum EventStatus: String, Decodable {
     case free
     case reserved
     case reservedByMy
@@ -32,6 +32,19 @@ enum EventStatus {
             case .free: return .green
             case .reserved: return .yellow
             case .reservedByMy: return .red
+        }
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+
+        switch rawValue {
+        case "free": self = .free
+        case "reserved": self = .reserved
+        case "reservedByMy": self = .reservedByMy
+        default:
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Unknown EventStatus value: \(rawValue)")
         }
     }
 }

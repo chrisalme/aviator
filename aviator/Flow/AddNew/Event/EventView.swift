@@ -8,6 +8,9 @@ import UIKit
 
 class EventView: UIView {
     
+    private(set) var circleBtns: [UIButton] = []
+
+    
     private lazy var backView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .backgroundsOne
@@ -78,6 +81,22 @@ class EventView: UIView {
         label.numberOfLines = 0
         return label
     }()
+    
+    private(set) lazy var nameScoreLabel: UILabel = {
+        let label = UILabel()
+        label.text = "\(UD.shared.userName ?? "userName")"
+        label.textColor = .white
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private(set) lazy var tableView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .customDarkRed
+        view.layer.cornerRadius = 40
+        return view
+    }()
 
     private(set) lazy var reservedBtn: UIButton = {
         let button = UIButton()
@@ -105,13 +124,24 @@ class EventView: UIView {
     
     private func setupUI() {
         
-        [backView,titleEventLabel,dateContainer,nameContainer,reservedBtn] .forEach(addSubview(_:))
+        [backView,titleEventLabel,dateContainer,nameContainer,tableView,reservedBtn] .forEach(addSubview(_:))
         
-        
+        for _ in 0..<10 {
+            let circleBtn = UIButton()
+            circleBtn.backgroundColor = .green
+            circleBtn.frame.size.width = 28
+            circleBtn.frame.size.height = 28
+            circleBtn.layer.cornerRadius = 14
+            circleBtn.layer.masksToBounds = false
+            addSubview(circleBtn)
+            circleBtns.append(circleBtn)
+        }
+
         dateContainer.addSubview(dateLabel)
         dateContainer.addSubview(timeLabel)
         dateContainer.addSubview(dateScoreLabel)
         nameContainer.addSubview(nameLabel)
+        nameContainer.addSubview(nameScoreLabel)
 
         
     }
@@ -158,11 +188,32 @@ class EventView: UIView {
             make.left.equalToSuperview().offset(40)
         }
         
+        nameScoreLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-40)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(nameContainer.snp.bottom).offset(130)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(200)
+            make.height.equalTo(100)
+        }
+
+        
         reservedBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(160)
             make.height.equalTo(48)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
         }
+        
+        for (index, circleBtn) in circleBtns.enumerated() {
+            circleBtn.snp.makeConstraints { make in
+                make.centerX.equalTo(tableView).offset(142 * cos(CGFloat(index) * 2 * CGFloat.pi / 10))
+                make.centerY.equalTo(tableView).offset(92 * sin(CGFloat(index) * 2 * CGFloat.pi / 10))
+            }
+        }
+
     }
 }
