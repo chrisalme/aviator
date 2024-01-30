@@ -42,9 +42,9 @@ class DetailVC: UIViewController {
     
     
     private func configView() {
-        contentView.giftDetailImage.image = UIImage(named: model.imageGifts)
+        contentView.giftDetailImage.image = UIImage(named: model.image)
         contentView.subTitleGiftLabel.text = model.title
-        contentView.creditsScoreLabel.text = model.price
+        contentView.creditsScoreLabel.text = String(model.price)
         contentView.descriptionBodyLabel.text = model.description
 
     }

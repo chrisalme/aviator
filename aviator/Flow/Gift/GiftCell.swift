@@ -112,8 +112,8 @@ class GiftCell: UITableViewCell {
     }
     
     func setupCell(item: GiftsModel) {
-        coinsLabel.text = item.price
+        coinsLabel.text = String(item.price)
         titleLabel.text = item.title
-        giftImage.image = UIImage(named: item.imageGifts)
+        giftImage.image = UIImage(named: item.image)
     }
 }

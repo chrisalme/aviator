@@ -9,13 +9,14 @@ import SnapKit
 class GiftVC: UIViewController {
     
     var items = [GiftsModel]()
-
+    let getService = GetService.shared
+    
     var contentView: GiftView {
         view as? GiftView ?? GiftView()
     }
     
     let service = TestBeck.shared
-
+    
     
     override func loadView() {
         view = GiftView()
@@ -23,7 +24,7 @@ class GiftVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        loadModel()
+        loadGift()
     }
     
     private func configureTableView() {
@@ -32,17 +33,29 @@ class GiftVC: UIViewController {
         contentView.giftAviatorTableView.separatorStyle = .none
     }
     
-    func loadModel() {
-        service.readFromGiftsData{ [weak self] models in
+    func loadGift() {
+        getService.fetchGift { [weak self] gifts in
             guard let self = self else { return }
-            self.items = models
+            self.items = gifts
             self.contentView.giftAviatorTableView.reloadData()
-        } errorComletion: { error in
-            print("Error")
+        } errorCompletion: { [weak self] error in
+            guard self != nil else { return }
+            
         }
     }
+    
 }
-
+//    func loadModel() {
+//        service.readFromGiftsData{ [weak self] models in
+//            guard let self = self else { return }
+//            self.items = models
+//            self.contentView.giftAviatorTableView.reloadData()
+//        } errorComletion: { error in
+//            print("Error")
+//        }
+//    }
+//}
+    
 extension GiftVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         items.count

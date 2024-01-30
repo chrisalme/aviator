@@ -31,6 +31,8 @@
 		185388582B558B93000BCC6A /* UD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388572B558B93000BCC6A /* UD.swift */; };
 		1853885B2B558BCA000BCC6A /* Settnigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853885A2B558BC9000BCC6A /* Settnigs.swift */; };
 		1853885D2B558C17000BCC6A /* Font + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853885C2B558C17000BCC6A /* Font + Extension.swift */; };
+		188F11C12B67F9D600B06F6F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F11C02B67F9D600B06F6F /* AuthService.swift */; };
+		188F11C32B68053A00B06F6F /* GetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F11C22B68053A00B06F6F /* GetService.swift */; };
 		18E6E3772B596D400076DBDF /* TestBeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3762B596D400076DBDF /* TestBeck.swift */; };
 		18E6E3792B596D580076DBDF /* GiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E3782B596D580076DBDF /* GiftCell.swift */; };
 		18E6E37B2B596D640076DBDF /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6E37A2B596D640076DBDF /* GiftModel.swift */; };
@@ -77,6 +79,8 @@
 		185388572B558B93000BCC6A /* UD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UD.swift; sourceTree = "<group>"; };
 		1853885A2B558BC9000BCC6A /* Settnigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settnigs.swift; sourceTree = "<group>"; };
 		1853885C2B558C17000BCC6A /* Font + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + Extension.swift"; sourceTree = "<group>"; };
+		188F11C02B67F9D600B06F6F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		188F11C22B68053A00B06F6F /* GetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetService.swift; sourceTree = "<group>"; };
 		18E6E3762B596D400076DBDF /* TestBeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBeck.swift; sourceTree = "<group>"; };
 		18E6E3782B596D580076DBDF /* GiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCell.swift; sourceTree = "<group>"; };
 		18E6E37A2B596D640076DBDF /* GiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
@@ -273,11 +277,21 @@
 		185388592B558BC2000BCC6A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				188F11BF2B67F9BD00B06F6F /* SericeUsers */,
 				1853885A2B558BC9000BCC6A /* Settnigs.swift */,
 				1853885C2B558C17000BCC6A /* Font + Extension.swift */,
 				18E6E3762B596D400076DBDF /* TestBeck.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		188F11BF2B67F9BD00B06F6F /* SericeUsers */ = {
+			isa = PBXGroup;
+			children = (
+				188F11C02B67F9D600B06F6F /* AuthService.swift */,
+				188F11C22B68053A00B06F6F /* GetService.swift */,
+			);
+			path = SericeUsers;
 			sourceTree = "<group>";
 		};
 		18E6E37C2B596D6D0076DBDF /* Detail */ = {
@@ -419,6 +433,7 @@
 				1853883F2B55827B000BCC6A /* ReservationVC.swift in Sources */,
 				1853884F2B5582C4000BCC6A /* InfoVC.swift in Sources */,
 				185388142B557CD5000BCC6A /* AppDelegate.swift in Sources */,
+				188F11C32B68053A00B06F6F /* GetService.swift in Sources */,
 				185388412B558285000BCC6A /* ReservationView.swift in Sources */,
 				18E6E3832B596DA90076DBDF /* CodeVC.swift in Sources */,
 				18E6E3912B5FF0780076DBDF /* ProfiveView.swift in Sources */,
@@ -434,6 +449,7 @@
 				18E6E39C2B62C4E70076DBDF /* EventView.swift in Sources */,
 				18E6E3892B5FB5880076DBDF /* WheelView.swift in Sources */,
 				1853884D2B5582BE000BCC6A /* BonusView.swift in Sources */,
+				188F11C12B67F9D600B06F6F /* AuthService.swift in Sources */,
 				1853882C2B557F5A000BCC6A /* WelcomeVC.swift in Sources */,
 				18E6E3802B596D820076DBDF /* DetailVC.swift in Sources */,
 				18E6E3772B596D400076DBDF /* TestBeck.swift in Sources */,

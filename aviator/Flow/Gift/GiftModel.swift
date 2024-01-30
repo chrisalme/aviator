@@ -10,9 +10,9 @@ import Foundation
 struct GiftsModel: Decodable {
     
     let id: String
-    let imageGifts: String
+    let image: String
     let title: String
-    let price: String
+    let price: Int
     let description: String
     
 }

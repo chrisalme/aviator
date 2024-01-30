@@ -9,7 +9,7 @@ import UIKit
 class EventView: UIView {
     
     private(set) var circleBtns: [UIButton] = []
-
+    private var reservations: [EventReservation] = []
     
     private lazy var backView: UIImageView = {
         let imageView = UIImageView()
@@ -125,7 +125,18 @@ class EventView: UIView {
     private func setupUI() {
         
         [backView,titleEventLabel,dateContainer,nameContainer,tableView,reservedBtn] .forEach(addSubview(_:))
+        createButtons()
+        dateContainer.addSubview(dateLabel)
+        dateContainer.addSubview(timeLabel)
+        dateContainer.addSubview(dateScoreLabel)
+        nameContainer.addSubview(nameLabel)
+        nameContainer.addSubview(nameScoreLabel)
+
         
+    }
+    
+    
+    private func createButtons() {
         for _ in 0..<10 {
             let circleBtn = UIButton()
             circleBtn.backgroundColor = .green
@@ -136,15 +147,22 @@ class EventView: UIView {
             addSubview(circleBtn)
             circleBtns.append(circleBtn)
         }
-
-        dateContainer.addSubview(dateLabel)
-        dateContainer.addSubview(timeLabel)
-        dateContainer.addSubview(dateScoreLabel)
-        nameContainer.addSubview(nameLabel)
-        nameContainer.addSubview(nameScoreLabel)
-
-        
     }
+    
+    private func setupReservations(reservations: [EventReservation]) {
+        for i in 0..<reservations.count {
+            let reservation = reservations[i]
+            switch reservation.status {
+            case .free:
+                circleBtns[i].backgroundColor = .green
+            case .reserved:
+                circleBtns[i].backgroundColor = .red
+            case .reservedByMy:
+                circleBtns[i].backgroundColor = .yellow
+            }
+        }
+    }
+    
     private func setupConstraints() {
    
         backView.snp.makeConstraints { (make) in

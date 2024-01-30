@@ -25,7 +25,7 @@ class TabBarRootController: UITabBarController {
         
         let addNewVC = AddNewVC()
         let addNewNavController = UINavigationController(rootViewController: addNewVC)
-        buildConfig(addNewNavController, title: "+", imageName: "addNew_Btn")
+        buildConfig(addNewNavController, title: "", imageName: "addNew_Btn")
         
         let bonusVC = BonusVC()
         let bonusNavController = UINavigationController(rootViewController: bonusVC)
