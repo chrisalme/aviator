@@ -31,6 +31,8 @@ class EventView: UIView {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = .zero
         view.layer.shadowRadius = 68
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.white.withAlphaComponent(0.18).cgColor
         view.backgroundColor = .white.withAlphaComponent(0.18)
         view.clipsToBounds = true
         return view
@@ -43,6 +45,8 @@ class EventView: UIView {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = .zero
         view.layer.shadowRadius = 68
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.white.withAlphaComponent(0.18).cgColor
         view.backgroundColor = .white.withAlphaComponent(0.18)
         view.clipsToBounds = true
         return view
@@ -52,36 +56,75 @@ class EventView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.text = "Date"
-        label.font = UIFont.customFont(font: .mont, style: .bold, size: 20)
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 20)
         label.numberOfLines = 0
         return label
+    }()
+    
+    private lazy var dateScoreContainer: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 20
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.85).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .zero
+        view.layer.shadowRadius = 68
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.white.withAlphaComponent(0.18).cgColor
+        view.backgroundColor = .white.withAlphaComponent(0.08)
+        return view
     }()
     
     private(set) lazy var dateScoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .bold, size: 16)
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 16)
         label.numberOfLines = 0
         return label
     }()
 
+    private lazy var timeContainer: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 20
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.85).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .zero
+        view.layer.shadowRadius = 68
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.white.withAlphaComponent(0.18).cgColor
+        view.backgroundColor = .white.withAlphaComponent(0.08)
+        return view
+    }()
+    
     private(set) lazy var timeLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .bold, size: 16)
-        label.numberOfLines = 0
-        return label
-    }()
-
-    private(set) lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Name"
-        label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .bold, size: 20)
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 16)
         label.numberOfLines = 0
         return label
     }()
     
+    private(set) lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Name"
+        label.textColor = .white
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 20)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var nameScoreContainer: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 20
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.85).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .zero
+        view.layer.shadowRadius = 68
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.white.withAlphaComponent(0.18).cgColor
+        view.backgroundColor = .white.withAlphaComponent(0.08)
+        return view
+    }()
+
     private(set) lazy var nameScoreLabel: UILabel = {
         let label = UILabel()
         label.text = "\(UD.shared.userName ?? "userName")"
@@ -126,12 +169,14 @@ class EventView: UIView {
         
         [backView,titleEventLabel,dateContainer,nameContainer,tableView,reservedBtn] .forEach(addSubview(_:))
         createButtons()
+        dateContainer.addSubview(dateScoreContainer)
         dateContainer.addSubview(dateLabel)
-        dateContainer.addSubview(timeLabel)
-        dateContainer.addSubview(dateScoreLabel)
+        dateContainer.addSubview(timeContainer)
+        timeContainer.addSubview(timeLabel)
+        dateScoreContainer.addSubview(dateScoreLabel)
         nameContainer.addSubview(nameLabel)
-        nameContainer.addSubview(nameScoreLabel)
-
+        nameContainer.addSubview(nameScoreContainer)
+        nameScoreContainer.addSubview(nameScoreLabel)
         
     }
     
@@ -150,19 +195,19 @@ class EventView: UIView {
         }
     }
     
-//    private func setupReservations(reservations: [EventReservation]) {
-//        for i in 0..<reservations.count {
-//            let reservation = reservations[i]
-//            switch reservation.status {
-//            case .free:
-//                circleBtns[i].backgroundColor = .green
-//            case .reserved:
-//                circleBtns[i].backgroundColor = .red
-//            case .reservedByMy:
-//                circleBtns[i].backgroundColor = .yellow
-//            }
-//        }
-//    }
+    func setupReservations(reservations: [EventReservation]) {
+        for i in 0..<reservations.count {
+            let reservation = reservations[i]
+            switch reservation.status {
+            case .free:
+                circleBtns[i].backgroundColor = .green
+            case .reserved:
+                circleBtns[i].backgroundColor = .red
+            case .reservedByMy:
+                circleBtns[i].backgroundColor = .yellow
+            }
+        }
+    }
     
     private func setupConstraints() {
    
@@ -186,16 +231,29 @@ class EventView: UIView {
             make.left.equalToSuperview().offset(40)
         }
         
+        timeContainer.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+//            make.left.equalTo(dateLabel.snp.right).offset(40)
+            make.width.equalTo(128)
+            make.height.equalTo(40)
+        }
+        
         timeLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+
+        
+        dateScoreContainer.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalTo(dateLabel.snp.right).offset(40)
+            make.left.equalTo(timeContainer.snp.right).offset(4)
+            make.width.equalTo(98)
+            make.height.equalTo(40)
         }
         
         dateScoreLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.left.equalTo(timeLabel.snp.right).offset(44)
+            make.center.equalToSuperview()
         }
-        
+
         nameContainer.snp.makeConstraints { make in
             make.top.equalTo(dateContainer.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(20)
@@ -207,11 +265,17 @@ class EventView: UIView {
             make.left.equalToSuperview().offset(40)
         }
         
-        nameScoreLabel.snp.makeConstraints { make in
+        nameScoreContainer.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-40)
+            make.right.equalToSuperview().offset(-10)
+            make.width.equalTo(128)
+            make.height.equalTo(40)
         }
         
+        nameScoreLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+
         tableView.snp.makeConstraints { make in
             make.top.equalTo(nameContainer.snp.bottom).offset(130)
             make.centerX.equalToSuperview()
