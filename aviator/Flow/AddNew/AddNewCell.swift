@@ -161,9 +161,9 @@ class AddNewCell: UITableViewCell {
     func setupCell(item: AddNewModel) {
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         let attributedText = NSAttributedString(string: item.event, attributes: underlineAttribute)
-        gameScoreLabel.attributedText = attributedText
-        dateScoreLabel.text = item.startData
-        timeScoreLabel.text = item.duration
-        placesScoreLabel.text = String(item.reservations.count)
+//        gameScoreLabel.attributedText = attributedText
+//        dateScoreLabel.text = item.startData
+//        timeScoreLabel.text = item.duration
+//        placesScoreLabel.text = String(item.reservations.count)
     }
 }

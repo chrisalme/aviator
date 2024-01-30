@@ -9,7 +9,7 @@ import SnapKit
 class AddNewVC: UIViewController {
     
     var items = [AddNewModel]()
-    
+    let getService = GetService.shared
 
     var contentView: AddNewView {
         view as? AddNewView ?? AddNewView()
@@ -34,14 +34,25 @@ class AddNewVC: UIViewController {
     }
     
     func loadModel() {
-        service.readFromAddNewData{ [weak self] models in
+        getService.fetchEvent { [weak self] event in
             guard let self = self else { return }
-            self.items = models
+            self.items = event
             self.contentView.eventTableView.reloadData()
-        } errorComletion: { error in
-            print("Error")
+        } errorCompletion: { [weak self] error in
+            guard self != nil else { return }
+            
         }
     }
+    
+//    func loadModel() {
+//        service.readFromAddNewData{ [weak self] models in
+//            guard let self = self else { return }
+//            self.items = models
+//            self.contentView.eventTableView.reloadData()
+//        } errorComletion: { error in
+//            print("Error")
+//        }
+//    }
 }
 
 extension AddNewVC: UITableViewDataSource, UITableViewDelegate {

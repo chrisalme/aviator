@@ -29,7 +29,7 @@ class EventVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        setupBackButton()
+        setupButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,14 +39,19 @@ class EventVC: UIViewController {
     }
     
     private func configView() {
-        contentView.titleEventLabel.text = model.event
-        contentView.dateScoreLabel.text = model.startData
-        contentView.timeLabel.text = model.duration
+//        contentView.titleEventLabel.text = model.event
+//        contentView.dateScoreLabel.text = model.startData
+//        contentView.timeLabel.text = model.duration
         
     }
-        func setupBackButton() {
-
+        func setupButton() {
+            contentView.circleBtns.forEach{ $0.addTarget(self, action: #selector(circleButtonTapped), for: .touchUpInside)}
             contentView.reservedBtn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
+    @objc func circleButtonTapped(_ target: UIButton) {
+        let res = model.reservations[target.tag]
+        print("TAPPED - \(res)")
     }
     
     @objc func buttonTapped() {

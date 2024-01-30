@@ -137,31 +137,32 @@ class EventView: UIView {
     
     
     private func createButtons() {
-        for _ in 0..<10 {
+        for i in 0..<10 {
             let circleBtn = UIButton()
             circleBtn.backgroundColor = .green
             circleBtn.frame.size.width = 28
             circleBtn.frame.size.height = 28
             circleBtn.layer.cornerRadius = 14
             circleBtn.layer.masksToBounds = false
+            circleBtn.tag = i
             addSubview(circleBtn)
             circleBtns.append(circleBtn)
         }
     }
     
-    private func setupReservations(reservations: [EventReservation]) {
-        for i in 0..<reservations.count {
-            let reservation = reservations[i]
-            switch reservation.status {
-            case .free:
-                circleBtns[i].backgroundColor = .green
-            case .reserved:
-                circleBtns[i].backgroundColor = .red
-            case .reservedByMy:
-                circleBtns[i].backgroundColor = .yellow
-            }
-        }
-    }
+//    private func setupReservations(reservations: [EventReservation]) {
+//        for i in 0..<reservations.count {
+//            let reservation = reservations[i]
+//            switch reservation.status {
+//            case .free:
+//                circleBtns[i].backgroundColor = .green
+//            case .reserved:
+//                circleBtns[i].backgroundColor = .red
+//            case .reservedByMy:
+//                circleBtns[i].backgroundColor = .yellow
+//            }
+//        }
+//    }
     
     private func setupConstraints() {
    
