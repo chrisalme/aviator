@@ -62,15 +62,18 @@ class UD {
         }
     }
     
-    var userID: Int? {
-        get {
-            return defaults.object(forKey: "userID") as? Int
-        }
-        set {
-            defaults.set(newValue, forKey: "userID")
-        }
-    }
-
+    var userId: String {
+           get {
+               if let savedUserId = defaults.string(forKey: "userId") {
+                   return savedUserId
+               } else {
+                   let newUserId = UUID().uuidString
+                   defaults.set(newUserId, forKey: "userId")
+                   defaults.synchronize()
+                   return newUserId
+               }
+           }
+       }
     
 }
     

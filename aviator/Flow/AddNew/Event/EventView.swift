@@ -203,7 +203,7 @@ class EventView: UIView {
                 circleBtns[i].backgroundColor = .green
             case .reserved:
                 circleBtns[i].backgroundColor = .red
-            case .reservedByMy:
+            case .reservedByMe:
                 circleBtns[i].backgroundColor = .yellow
             }
         }

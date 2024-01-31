@@ -30,30 +30,16 @@ struct EventReservation: Decodable {
         case status
     }
 }
-//struct AddNewModel: Decodable {
-//    let id: String
-//    let event: String
-//    let startData: String
-//    let duration: String
-//    let reservations: [EventReservation]
-//}
-//
-//struct EventReservation: Decodable {
-//    let id: Int
-//    let status: EventStatus
-//    
-//}
-//
 enum EventStatus: String, Decodable {
     case free
     case reserved
-    case reservedByMy
+    case reservedByMe
     
     var color: UIColor {
         switch self {
             case .free: return .green
-            case .reserved: return .yellow
-            case .reservedByMy: return .red
+            case .reserved: return .red
+            case .reservedByMe: return .yellow
         }
     }
 
@@ -64,7 +50,7 @@ enum EventStatus: String, Decodable {
         switch rawValue {
         case "free": self = .free
         case "reserved": self = .reserved
-        case "reservedByMy": self = .reservedByMy
+        case "reservedByMe": self = .reservedByMe
         default:
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "Unknown EventStatus value: \(rawValue)")
         }

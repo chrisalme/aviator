@@ -9,6 +9,10 @@ import UIKit
 class EventVC: UIViewController {
     
     var model: AddNewModel
+    private var selectedButton: UIButton?
+    private var seatID = ""
+    private var idUser = UD.shared.userId
+    
     
     private var contentView: EventView {
         view as? EventView ?? EventView()
@@ -63,20 +67,56 @@ class EventVC: UIViewController {
             }
         }
     }
-        func setupButton() {
-            contentView.circleBtns.forEach{ $0.addTarget(self, action: #selector(circleButtonTapped), for: .touchUpInside)}
-            contentView.reservedBtn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    
+    func setupButton() {
+        contentView.circleBtns.forEach{ $0.addTarget(self, action: #selector(circleButtonTapped), for: .touchUpInside)}
+        contentView.reservedBtn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     @objc func circleButtonTapped(_ target: UIButton) {
         let res = model.reservations.first(where: {$0.seat == target.tag})
+        if let previousButton = selectedButton {
+            previousButton.backgroundColor = res?.status.color
+        }
+        
+        selectedButton = target
+        target.backgroundColor = .blue
         guard let res = res else { return }
-        print("TAPPED - \(res.seat)")
+        seatID = res.id
+        print("UserID - \(res.userID) id - \(res.id)")
     }
     
     @objc func buttonTapped() {
-        
+        fetchReserv()
         navigationController?.popViewController(animated: true)
+        
     }
-
+    
+    private func fetchReserv() {
+        let urlString = "https://aviatorgame-backend-6ff168b0f620.herokuapp.com/api/events/reservation/\(seatID)/\(idUser)"
+        print("User ID - \(idUser)")
+        if let url = URL(string: urlString) {
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            guard let token = AuthService.shared.token else { return }
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                } else if let httpResponse = response as? HTTPURLResponse,
+                          (200..<300).contains(httpResponse.statusCode) {
+                    // Обработайте успешный ответ, если необходимо
+                    if data != nil {
+                        print("Response")
+                    }
+                } else {
+                    print("Unexpected response: \(response?.description ?? "")")
+                }
+            }.resume()
+        } else {
+            print("Invalid URL")
+        }
+    }
+    
 }

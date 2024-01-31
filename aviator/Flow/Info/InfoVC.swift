@@ -8,7 +8,7 @@ import SnapKit
 
 class InfoVC: UIViewController {
     
-    
+    let auth = AuthService.shared
     
     var contentView: InfoView {
         view as? InfoView ?? InfoView()
@@ -25,7 +25,7 @@ class InfoVC: UIViewController {
     private func tappedButtons() {
         contentView.personBtn.addTarget(self, action: #selector(personTapped), for: .touchUpInside)
     }
-    
+
     @objc func personTapped() {
         let profileVc = ProfileVC()
         profileVc.modalPresentationStyle = .fullScreen
