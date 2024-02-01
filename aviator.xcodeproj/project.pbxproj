@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1850EA5C2B6A8A18003B637F /* ReservCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA5B2B6A8A18003B637F /* ReservCell.swift */; };
+		1850EA5F2B6BCE0B003B637F /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA5E2B6BCE0B003B637F /* OnboardView.swift */; };
+		1850EA612B6BCE11003B637F /* OnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA602B6BCE11003B637F /* OnboardVC.swift */; };
 		185388142B557CD5000BCC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388132B557CD5000BCC6A /* AppDelegate.swift */; };
 		185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388152B557CD5000BCC6A /* SceneDelegate.swift */; };
 		1853881D2B557CD8000BCC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1853881C2B557CD8000BCC6A /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		1850EA5B2B6A8A18003B637F /* ReservCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservCell.swift; sourceTree = "<group>"; };
+		1850EA5E2B6BCE0B003B637F /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		1850EA602B6BCE11003B637F /* OnboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardVC.swift; sourceTree = "<group>"; };
 		185388102B557CD5000BCC6A /* aviator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aviator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185388132B557CD5000BCC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185388152B557CD5000BCC6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1850EA5D2B6BCDF3003B637F /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				1850EA602B6BCE11003B637F /* OnboardVC.swift */,
+				1850EA5E2B6BCE0B003B637F /* OnboardView.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
 		185388072B557CD5000BCC6A = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 		185388272B557CEC000BCC6A /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				1850EA5D2B6BCDF3003B637F /* Onboard */,
 				1853882A2B557F2E000BCC6A /* Welcome */,
 				185388292B557EE7000BCC6A /* TabBar */,
 				1853882F2B557F75000BCC6A /* Reservation */,
@@ -440,6 +454,7 @@
 				185388412B558285000BCC6A /* ReservationView.swift in Sources */,
 				18E6E3832B596DA90076DBDF /* CodeVC.swift in Sources */,
 				18E6E3912B5FF0780076DBDF /* ProfiveView.swift in Sources */,
+				1850EA612B6BCE11003B637F /* OnboardVC.swift in Sources */,
 				185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */,
 				185388472B5582AB000BCC6A /* AddNewVC.swift in Sources */,
 				18E6E38E2B5FB6570076DBDF /* BonusPrizeView.swift in Sources */,
@@ -456,6 +471,7 @@
 				1853882C2B557F5A000BCC6A /* WelcomeVC.swift in Sources */,
 				18E6E3802B596D820076DBDF /* DetailVC.swift in Sources */,
 				18E6E3772B596D400076DBDF /* TestBeck.swift in Sources */,
+				1850EA5F2B6BCE0B003B637F /* OnboardView.swift in Sources */,
 				1853885B2B558BCA000BCC6A /* Settnigs.swift in Sources */,
 				18E6E39E2B62C4ED0076DBDF /* EventVC.swift in Sources */,
 				18E6E3992B628CEB0076DBDF /* AddNewCell.swift in Sources */,

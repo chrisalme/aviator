@@ -151,7 +151,6 @@ class EventView: UIView {
         return button
     }()
 
-        
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -163,7 +162,6 @@ class EventView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     private func setupUI() {
         
@@ -177,9 +175,7 @@ class EventView: UIView {
         nameContainer.addSubview(nameLabel)
         nameContainer.addSubview(nameScoreContainer)
         nameScoreContainer.addSubview(nameScoreLabel)
-        
     }
-    
     
     private func createButtons() {
         for i in 0..<10 {
@@ -233,7 +229,6 @@ class EventView: UIView {
         
         timeContainer.snp.makeConstraints { make in
             make.center.equalToSuperview()
-//            make.left.equalTo(dateLabel.snp.right).offset(40)
             make.width.equalTo(128)
             make.height.equalTo(40)
         }
@@ -242,7 +237,6 @@ class EventView: UIView {
             make.center.equalToSuperview()
         }
 
-        
         dateScoreContainer.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalTo(timeContainer.snp.right).offset(4)
@@ -283,7 +277,6 @@ class EventView: UIView {
             make.height.equalTo(100)
         }
 
-        
         reservedBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(160)
@@ -297,6 +290,5 @@ class EventView: UIView {
                 make.centerY.equalTo(tableView).offset(92 * sin(CGFloat(index) * 2 * CGFloat.pi / 10))
             }
         }
-
     }
 }

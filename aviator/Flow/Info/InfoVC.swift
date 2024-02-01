@@ -20,25 +20,6 @@ class InfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tappedButtons()
-        authenticateAndCheckToken()
-    }
-    
-    private func authenticateAndCheckToken() {
-        Task {
-            do {
-                try await auth.authenticate()
-                checkToken()
-            } catch {
-                print("Authentication failed. Error: \(error)")
-            }
-        }
-    }
-
-    private func checkToken() {
-        guard let token = auth.token else {
-            return
-        }
-        print("TOKEN - \(token)")
     }
     
     private func tappedButtons() {

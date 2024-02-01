@@ -34,13 +34,13 @@ class EventVC: UIViewController {
         super.viewDidLoad()
         configView()
         setupButton()
-        contentView.setupReservations(reservations: model.reservations)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
         tabBarController?.tabBar.isHidden = true
+        contentView.setupReservations(reservations: model.reservations)
     }
     
     private func configView() {
@@ -77,7 +77,7 @@ class EventVC: UIViewController {
         let res = model.reservations.first(where: {$0.seat == target.tag})
         let yellowButtons = contentView.circleBtns.filter { $0.backgroundColor == .yellow }
         if yellowButtons.count >= 1 && target.backgroundColor == .green {
-            showAlert(message: "Вы не можете выбрать два места")
+            showAlert(message: "You can't pick two places")
             return
         }
         
@@ -135,7 +135,7 @@ class EventVC: UIViewController {
                     print("Error: \(error.localizedDescription)")
                 } else if let httpResponse = response as? HTTPURLResponse,
                           (200..<300).contains(httpResponse.statusCode) {
-                    // Обработайте успешный ответ, если необходимо
+                    // Обработь успешный ответ
                     if data != nil {
                         print("Response")
                     }
@@ -147,5 +147,4 @@ class EventVC: UIViewController {
             print("Invalid URL")
         }
     }
-    
 }

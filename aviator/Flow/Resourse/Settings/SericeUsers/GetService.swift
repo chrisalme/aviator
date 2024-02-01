@@ -14,13 +14,10 @@ class GetService {
 
     static let shared = GetService()
     private init() {}
-    
 
     private let urlStringGifts = "https://aviatorgame-backend-6ff168b0f620.herokuapp.com/api/gifts"
     private let urlStringEvent = "https://aviatorgame-backend-6ff168b0f620.herokuapp.com/api/events"
     private let urlStringReserved = "https://aviatorgame-backend-6ff168b0f620.herokuapp.com/api/events/reservation/all/\(UD.shared.userId)"
-
-
 
     func fetchGift(successCompletion: @escaping([GiftsModel]) -> Void, errorCompletion: @escaping (Error) -> Void) {
 
@@ -37,7 +34,7 @@ class GetService {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
+            if error != nil {
                 DispatchQueue.main.async {
                     errorCompletion(EventServiceError.noData)
                 }
@@ -84,7 +81,7 @@ class GetService {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
+            if error != nil {
                 DispatchQueue.main.async {
                     errorCompletion(EventServiceError.noData)
                 }
@@ -131,7 +128,7 @@ class GetService {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
+            if error != nil {
                 DispatchQueue.main.async {
                     errorCompletion(EventServiceError.noData)
                 }

@@ -143,9 +143,6 @@ extension BonusVC {
         let now = Date()
         if now < targetDate {
             let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
-            let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
-//            let attrString = CustomTextStyle.labelAttrString.attributedString(with: "\(timeString)")
-//            contentView.timecountLabel.attributedText = attrString
 
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
                 guard let self = self else {

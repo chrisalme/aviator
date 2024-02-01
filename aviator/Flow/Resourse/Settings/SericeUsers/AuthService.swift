@@ -45,18 +45,4 @@ class AuthService {
     }
 }
 
-func main() async {
-    do {
-        let token = try await AuthService.shared.authenticate()
-        print("Token received: \(token)")
-    } catch {
-        print("Error: \(error.localizedDescription)")
-    }
-}
-
-func start() {
-    Task {
-        await main()
-    }
-}
 

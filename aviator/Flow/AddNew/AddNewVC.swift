@@ -10,13 +10,13 @@ class AddNewVC: UIViewController {
     
     var items = [AddNewModel]()
     let getService = GetService.shared
-
+    
     var contentView: AddNewView {
         view as? AddNewView ?? AddNewView()
     }
     
     let service = TestBeck.shared
-
+    
     
     override func loadView() {
         view = AddNewView()
@@ -24,7 +24,12 @@ class AddNewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadModel()
+
     }
     
     private func configureTableView() {
@@ -43,16 +48,6 @@ class AddNewVC: UIViewController {
             
         }
     }
-    
-//    func loadModel() {
-//        service.readFromAddNewData{ [weak self] models in
-//            guard let self = self else { return }
-//            self.items = models
-//            self.contentView.eventTableView.reloadData()
-//        } errorComletion: { error in
-//            print("Error")
-//        }
-//    }
 }
 
 extension AddNewVC: UITableViewDataSource, UITableViewDelegate {
@@ -89,26 +84,26 @@ extension AddNewVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60))
-            headerView.backgroundColor = .clear
-          
-            let titleLabel = UILabel()
-            titleLabel.text = "Events".uppercased()
-            titleLabel.font = UIFont.customFont(font: .mont, style: .bold, size: 40)
-            titleLabel.textAlignment = .center
-            titleLabel.textColor = .white
-            titleLabel.frame = headerView.bounds
-            
-            headerView.addSubview(titleLabel)
-            
-            return headerView
-        }
-
-        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 60.0
-        }
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60))
+        headerView.backgroundColor = .clear
         
-        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "Events"
-        }
+        let titleLabel = UILabel()
+        titleLabel.text = "Events".uppercased()
+        titleLabel.font = UIFont.customFont(font: .mont, style: .bold, size: 40)
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.frame = headerView.bounds
+        
+        headerView.addSubview(titleLabel)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60.0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Events"
+    }
 }

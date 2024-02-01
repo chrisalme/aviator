@@ -25,9 +25,15 @@ class ReservationVC: UIViewController {
 //        authenticateAndCheckToken()
         print("\(UD.shared.userId)")
         configureTableView()
-        loadModel()
+//        loadModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadModel()
+
+    }
+
     private func configureTableView() {
         contentView.reservTableView.dataSource = self
         contentView.reservTableView.delegate = self
@@ -84,19 +90,6 @@ extension ReservationVC: UITableViewDataSource, UITableViewDelegate {
         
         return addNewCell
     }
-    
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        
-//        let item = items[indexPath.row]
-//        
-//        let eventVC = EventVC(model: item, seatID: "")
-//        eventVC.model = item
-//        eventVC.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(eventVC, animated: true)
-//        
-//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         

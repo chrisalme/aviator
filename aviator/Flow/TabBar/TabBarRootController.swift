@@ -25,7 +25,7 @@ class TabBarRootController: UITabBarController {
         
         let addNewVC = AddNewVC()
         let addNewNavController = UINavigationController(rootViewController: addNewVC)
-        buildConfig(addNewNavController, title: "", imageName: "addNew_Btn")
+        buildConfig(addNewNavController, title: "Events", imageName: "addNew_Btn")
         
         let bonusVC = BonusVC()
         let bonusNavController = UINavigationController(rootViewController: bonusVC)
@@ -35,13 +35,13 @@ class TabBarRootController: UITabBarController {
         buildConfig(infoVC, title: "Info", imageName: "info_Btn")
         
         
-        viewControllers = [infoVC,giftNavController,addNewNavController,bonusNavController,reservVC]
+        viewControllers = [reservVC,giftNavController,addNewNavController,bonusNavController,infoVC]
         
     }
     
     private func buildConfig(_ vc: UIViewController, title: String, imageName: String) {
         vc.tabBarItem.title = title
         vc.tabBarItem.image = UIImage(named: imageName)
-        vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 6)
+        vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 12)
     }
 }
