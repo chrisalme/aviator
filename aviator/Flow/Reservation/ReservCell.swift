@@ -1,14 +1,14 @@
 //
-//  reservCell.swift
+//  ReservCell.swift
 //  aviator
 
 import Foundation
 import UIKit
 import SnapKit
 
-class reservCell: UITableViewCell {
+class ReservCell: UITableViewCell {
     
-    static let reuseId = String(describing: reservCell.self)
+    static let reuseId = String(describing: ReservCell.self)
     
     
     private(set) lazy var reservEventContainer: UIView = {

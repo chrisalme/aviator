@@ -22,7 +22,7 @@ class ReservationVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        authenticateAndCheckToken()
+//        authenticateAndCheckToken()
         print("\(UD.shared.userId)")
         configureTableView()
         loadModel()
@@ -72,9 +72,9 @@ extension ReservationVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AddNewCell.reuseId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReservCell.reuseId, for: indexPath)
         
-        guard let addNewCell = cell as? AddNewCell else {
+        guard let addNewCell = cell as? ReservCell else {
             return cell
         }
         

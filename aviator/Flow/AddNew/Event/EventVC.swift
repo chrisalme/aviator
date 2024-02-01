@@ -75,6 +75,20 @@ class EventVC: UIViewController {
     
     @objc func circleButtonTapped(_ target: UIButton) {
         let res = model.reservations.first(where: {$0.seat == target.tag})
+        let yellowButtons = contentView.circleBtns.filter { $0.backgroundColor == .yellow }
+        if yellowButtons.count >= 1 && target.backgroundColor == .green {
+            showAlert(message: "Вы не можете выбрать два места")
+            return
+        }
+        
+        if target.backgroundColor == UIColor.red {
+            showAlertError(message: "The place is busy")
+            return
+        } else if target.backgroundColor == UIColor.yellow {
+            showAlert(message: "You have already chosen this place")
+            return
+        }
+        
         if let previousButton = selectedButton {
             previousButton.backgroundColor = res?.status.color
         }
@@ -85,6 +99,21 @@ class EventVC: UIViewController {
         seatID = res.id
         print("UserID - \(res.userID) id - \(res.id)")
     }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Sorry", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func showAlertError(message: String) {
+        let alertController = UIAlertController(title: "Sorry", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     
     @objc func buttonTapped() {
         fetchReserv()

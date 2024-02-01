@@ -147,10 +147,10 @@ class GetService {
             
             do {
                 let decoder = JSONDecoder()
-                let event = try decoder.decode([AddNewModel].self, from: data)
+                let reserv = try decoder.decode([AddNewModel].self, from: data)
                 DispatchQueue.main.async {
-                    successCompletion(event)
-                    print("EVENTS - \(event)")
+                    successCompletion(reserv)
+                    print("Reserv - \(reserv)")
                 }
             }catch {
                 print("error", error)

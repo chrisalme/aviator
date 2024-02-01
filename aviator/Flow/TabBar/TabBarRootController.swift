@@ -35,7 +35,7 @@ class TabBarRootController: UITabBarController {
         buildConfig(infoVC, title: "Info", imageName: "info_Btn")
         
         
-        viewControllers = [reservVC,giftNavController,addNewNavController,bonusNavController,infoVC]
+        viewControllers = [infoVC,giftNavController,addNewNavController,bonusNavController,reservVC]
         
     }
     

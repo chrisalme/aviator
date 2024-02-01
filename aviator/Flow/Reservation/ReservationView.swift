@@ -18,7 +18,7 @@ class ReservationView: UIView {
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -56, right: 0)
-        tableView.register(reservCell.self, forCellReuseIdentifier: reservCell.reuseId)
+        tableView.register(ReservCell.self, forCellReuseIdentifier: ReservCell.reuseId)
         tableView.separatorStyle = .none
         return tableView
     }()
