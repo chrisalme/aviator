@@ -134,6 +134,20 @@ class EventView: UIView {
         return label
     }()
 
+    
+    private(set) lazy var backTableView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 20
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.85).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .zero
+        view.layer.shadowRadius = 68
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.white.withAlphaComponent(0.18).cgColor
+        view.backgroundColor = .white.withAlphaComponent(0.08)
+        return view
+    }()
+
     private(set) lazy var tableView: UIView = {
         let view = UIView()
         view.backgroundColor = .customDarkRed
@@ -150,13 +164,67 @@ class EventView: UIView {
         button.layer.cornerRadius = 20
         return button
     }()
+    
+    private(set) lazy var infoBtnRes: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .red
+        button.layer.cornerRadius = 5
+        return button
+    }()
+
+    private(set) lazy var redLabel: UILabel = {
+        let label = UILabel()
+        label.text = " - Seat reserved"
+        label.textColor = .white
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 10)
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private(set) lazy var infoBtnMyRes: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .yellow
+        button.layer.cornerRadius = 5
+        return button
+    }()
+    
+    private(set) lazy var yellowLabel: UILabel = {
+        let label = UILabel()
+        label.text = " - Your reservation"
+        label.textColor = .white
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 10)
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private(set) lazy var infoBtnFree: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .green
+        button.layer.cornerRadius = 5
+        return button
+    }()
+    
+    private(set) lazy var greenLabel: UILabel = {
+        let label = UILabel()
+        label.text = " - Free seat"
+        label.textColor = .white
+        label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 10)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private(set) lazy var closeBtn: UIButton = {
+        let button = UIButton()
+        button.setImage(.closeBtn, for: .normal)
+        return button
+    }()
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setupUI()
         setupConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -165,7 +233,14 @@ class EventView: UIView {
     
     private func setupUI() {
         
-        [backView,titleEventLabel,dateContainer,nameContainer,tableView,reservedBtn] .forEach(addSubview(_:))
+        [backView,closeBtn,titleEventLabel,dateContainer,nameContainer,reservedBtn,backTableView] .forEach(addSubview(_:))
+        backTableView.addSubview(tableView)
+        backView.addSubview(infoBtnFree)
+        backView.addSubview(greenLabel)
+        backView.addSubview(infoBtnRes)
+        backView.addSubview(redLabel)
+        backView.addSubview(infoBtnMyRes)
+        backView.addSubview(yellowLabel)
         createButtons()
         dateContainer.addSubview(dateScoreContainer)
         dateContainer.addSubview(dateLabel)
@@ -175,6 +250,7 @@ class EventView: UIView {
         nameContainer.addSubview(nameLabel)
         nameContainer.addSubview(nameScoreContainer)
         nameScoreContainer.addSubview(nameScoreLabel)
+        
     }
     
     private func createButtons() {
@@ -200,7 +276,12 @@ class EventView: UIView {
             case .reserved:
                 circleBtns[i].backgroundColor = .red
             case .reservedByMe:
-                circleBtns[i].backgroundColor = .yellow
+                if reservation.userID == UD.shared.userId {
+                    circleBtns[i].backgroundColor = .yellow
+
+                }else {
+                    circleBtns[i].backgroundColor = .red
+                }
             }
         }
     }
@@ -211,6 +292,11 @@ class EventView: UIView {
             make.edges.equalToSuperview()
         }
         
+        closeBtn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(24)
+            make.top.equalToSuperview().inset(56)
+        }
+
         titleEventLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(36)
             make.centerX.equalToSuperview()
@@ -269,14 +355,56 @@ class EventView: UIView {
         nameScoreLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+        
+        backTableView.snp.makeConstraints { make in
+            make.top.equalTo(nameContainer.snp.bottom).offset(69)
+            make.left.right.equalToSuperview().inset(20)
+            make.bottom.equalTo(reservedBtn.snp.top).offset(-18)
+        }
 
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(nameContainer.snp.bottom).offset(130)
+            make.centerY.equalToSuperview()
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
             make.height.equalTo(100)
         }
+        
+        infoBtnFree.snp.makeConstraints { make in
+            make.left.equalTo(backTableView).offset(24)
+            make.bottom.equalTo(backTableView).offset(-12)
+            make.height.equalTo(15)
+            make.width.equalTo(10)
+        }
 
+        greenLabel.snp.makeConstraints { make in
+            make.left.equalTo(infoBtnFree).offset(12)
+            make.bottom.equalTo(backTableView).offset(-14)
+        }
+        
+        infoBtnRes.snp.makeConstraints { make in
+            make.left.equalTo(greenLabel.snp.right).offset(10)
+            make.bottom.equalTo(backTableView).offset(-12)
+            make.height.equalTo(15)
+            make.width.equalTo(10)
+        }
+        
+        redLabel.snp.makeConstraints { make in
+            make.left.equalTo(infoBtnRes).offset(12)
+            make.bottom.equalTo(backTableView).offset(-14)
+        }
+        
+        infoBtnMyRes.snp.makeConstraints { make in
+            make.left.equalTo(redLabel.snp.right).offset(10)
+            make.bottom.equalTo(backTableView).offset(-12)
+            make.height.equalTo(15)
+            make.width.equalTo(10)
+        }
+        
+        yellowLabel.snp.makeConstraints { make in
+            make.left.equalTo(infoBtnMyRes).offset(12)
+            make.bottom.equalTo(backTableView).offset(-14)
+        }
+        
         reservedBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(160)

@@ -33,7 +33,6 @@ class EventVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        setupButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +40,7 @@ class EventVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         tabBarController?.tabBar.isHidden = true
         contentView.setupReservations(reservations: model.reservations)
+        setupButton()
     }
     
     private func configView() {
@@ -71,6 +71,8 @@ class EventVC: UIViewController {
     func setupButton() {
         contentView.circleBtns.forEach{ $0.addTarget(self, action: #selector(circleButtonTapped), for: .touchUpInside)}
         contentView.reservedBtn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        contentView.closeBtn.addTarget(self, action: #selector(buttonTappedClose), for: .touchUpInside)
+
     }
     
     @objc func circleButtonTapped(_ target: UIButton) {
@@ -114,7 +116,11 @@ class EventVC: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    
+    @objc func buttonTappedClose() {
+        navigationController?.popViewController(animated: true)
+        
+    }
+
     @objc func buttonTapped() {
         fetchReserv()
         navigationController?.popViewController(animated: true)

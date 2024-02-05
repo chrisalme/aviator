@@ -91,6 +91,19 @@ extension ReservationVC: UITableViewDataSource, UITableViewDelegate {
         return addNewCell
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        
+//        let item = items[indexPath.row]
+//        
+//        let eventVC = EventVC(model: item)
+//        eventVC.model = item
+//        eventVC.hidesBottomBarWhenPushed = true
+//        navigationController?.pushViewController(eventVC, animated: true)
+//        
+//    }
+
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
             let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60))
