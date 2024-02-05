@@ -10,6 +10,8 @@
 		1850EA5C2B6A8A18003B637F /* ReservCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA5B2B6A8A18003B637F /* ReservCell.swift */; };
 		1850EA5F2B6BCE0B003B637F /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA5E2B6BCE0B003B637F /* OnboardView.swift */; };
 		1850EA612B6BCE11003B637F /* OnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA602B6BCE11003B637F /* OnboardVC.swift */; };
+		1850EA642B70FA46003B637F /* ReservDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA632B70FA46003B637F /* ReservDetailVC.swift */; };
+		1850EA662B70FA50003B637F /* ReservDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850EA652B70FA50003B637F /* ReservDetailView.swift */; };
 		185388142B557CD5000BCC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388132B557CD5000BCC6A /* AppDelegate.swift */; };
 		185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185388152B557CD5000BCC6A /* SceneDelegate.swift */; };
 		1853881D2B557CD8000BCC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1853881C2B557CD8000BCC6A /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		1850EA5B2B6A8A18003B637F /* ReservCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservCell.swift; sourceTree = "<group>"; };
 		1850EA5E2B6BCE0B003B637F /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		1850EA602B6BCE11003B637F /* OnboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardVC.swift; sourceTree = "<group>"; };
+		1850EA632B70FA46003B637F /* ReservDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservDetailVC.swift; sourceTree = "<group>"; };
+		1850EA652B70FA50003B637F /* ReservDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservDetailView.swift; sourceTree = "<group>"; };
 		185388102B557CD5000BCC6A /* aviator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aviator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185388132B557CD5000BCC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185388152B557CD5000BCC6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,15 @@
 				1850EA5E2B6BCE0B003B637F /* OnboardView.swift */,
 			);
 			path = Onboard;
+			sourceTree = "<group>";
+		};
+		1850EA622B70FA31003B637F /* ReservDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1850EA632B70FA46003B637F /* ReservDetailVC.swift */,
+				1850EA652B70FA50003B637F /* ReservDetailView.swift */,
+			);
+			path = ReservDetail;
 			sourceTree = "<group>";
 		};
 		185388072B557CD5000BCC6A = {
@@ -204,6 +217,7 @@
 				1853883E2B55827B000BCC6A /* ReservationVC.swift */,
 				185388402B558285000BCC6A /* ReservationView.swift */,
 				1850EA5B2B6A8A18003B637F /* ReservCell.swift */,
+				1850EA622B70FA31003B637F /* ReservDetail */,
 			);
 			path = Reservation;
 			sourceTree = "<group>";
@@ -439,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E6E3932B5FF0820076DBDF /* ProfileVC.swift in Sources */,
+				1850EA662B70FA50003B637F /* ReservDetailView.swift in Sources */,
 				18E6E37B2B596D640076DBDF /* GiftModel.swift in Sources */,
 				185388512B5582CB000BCC6A /* InfoView.swift in Sources */,
 				1853882E2B557F60000BCC6A /* WelcomeView.swift in Sources */,
@@ -456,6 +471,7 @@
 				18E6E3912B5FF0780076DBDF /* ProfiveView.swift in Sources */,
 				1850EA612B6BCE11003B637F /* OnboardVC.swift in Sources */,
 				185388162B557CD5000BCC6A /* SceneDelegate.swift in Sources */,
+				1850EA642B70FA46003B637F /* ReservDetailVC.swift in Sources */,
 				185388472B5582AB000BCC6A /* AddNewVC.swift in Sources */,
 				18E6E38E2B5FB6570076DBDF /* BonusPrizeView.swift in Sources */,
 				185388432B55829B000BCC6A /* GiftVC.swift in Sources */,

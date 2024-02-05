@@ -1,12 +1,11 @@
 //
-//  EventView.swift
+//  ReservDetailView.swift
 //  aviator
-//
 
 import Foundation
 import UIKit
 
-class EventView: UIView {
+class ReservDetailView: UIView {
     
     private(set) var circleBtns: [UIButton] = []
     private var reservations: [EventReservation] = []
@@ -155,15 +154,15 @@ class EventView: UIView {
         return view
     }()
 
-    private(set) lazy var reservedBtn: UIButton = {
-        let button = UIButton()
-        button.setTitle("Reserved", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .customRed
-        button.titleLabel?.font = UIFont.customFont(font: .mont, style: .semiBold, size: 20)
-        button.layer.cornerRadius = 20
-        return button
-    }()
+//    private(set) lazy var reservedBtn: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("Reserved", for: .normal)
+//        button.setTitleColor(.white, for: .normal)
+//        button.backgroundColor = .customRed
+//        button.titleLabel?.font = UIFont.customFont(font: .mont, style: .semiBold, size: 20)
+//        button.layer.cornerRadius = 20
+//        return button
+//    }()
     
     private(set) lazy var infoBtnRes: UIButton = {
         let button = UIButton()
@@ -233,7 +232,7 @@ class EventView: UIView {
     
     private func setupUI() {
         
-        [backView,closeBtn,titleEventLabel,dateContainer,nameContainer,reservedBtn,backTableView] .forEach(addSubview(_:))
+        [backView,closeBtn,titleEventLabel,dateContainer,nameContainer,backTableView] .forEach(addSubview(_:))
         backTableView.addSubview(tableView)
         backView.addSubview(infoBtnFree)
         backView.addSubview(greenLabel)
@@ -359,7 +358,7 @@ class EventView: UIView {
         backTableView.snp.makeConstraints { make in
             make.top.equalTo(nameContainer.snp.bottom).offset(69)
             make.left.right.equalToSuperview().inset(20)
-            make.bottom.equalTo(reservedBtn.snp.top).offset(-69)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-169)
         }
 
         tableView.snp.makeConstraints { make in
@@ -405,12 +404,12 @@ class EventView: UIView {
             make.bottom.equalTo(backTableView).offset(-14)
         }
         
-        reservedBtn.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(160)
-            make.height.equalTo(48)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
-        }
+//        reservedBtn.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.width.equalTo(160)
+//            make.height.equalTo(48)
+//            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
+//        }
         
         for (index, circleBtn) in circleBtns.enumerated() {
             circleBtn.snp.makeConstraints { make in

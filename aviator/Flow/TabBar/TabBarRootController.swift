@@ -9,14 +9,14 @@ class TabBarRootController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         UITabBar.appearance().unselectedItemTintColor = .white
         UITabBar.appearance().tintColor = .customRed
         UITabBar.appearance().backgroundColor = .clear.withAlphaComponent(0.35)
 
         
         let reservVC = ReservationVC()
-        buildConfig(reservVC, title: "Reservation", imageName: "reserv_Btn")
+        let reservNavController = UINavigationController(rootViewController: reservVC)
+        buildConfig(reservNavController, title: "Reservation", imageName: "reserv_Btn")
          
         
         let giftVC = GiftVC()
@@ -35,10 +35,10 @@ class TabBarRootController: UITabBarController {
         buildConfig(infoVC, title: "Info", imageName: "info_Btn")
         
         
-        viewControllers = [reservVC,giftNavController,addNewNavController,bonusNavController,infoVC]
+        viewControllers = [reservNavController,giftNavController,addNewNavController,bonusNavController,infoVC]
         
     }
-    
+
     private func buildConfig(_ vc: UIViewController, title: String, imageName: String) {
         vc.tabBarItem.title = title
         vc.tabBarItem.image = UIImage(named: imageName)

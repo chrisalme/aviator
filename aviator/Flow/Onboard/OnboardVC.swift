@@ -17,11 +17,13 @@ class OnboardVC: UIViewController {
     override func loadView() {
         view = OnboardView()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticateAndCheckToken()
         animaPB()
     }
+    
     func presentHomeScreen() {
         let vc = TabBarRootController()
         let navigationController = UINavigationController(rootViewController: vc)
@@ -57,6 +59,4 @@ class OnboardVC: UIViewController {
             self.contentView.loadView.setProgress(1.0, animated: true)
         }
     }
-    
-    
 }

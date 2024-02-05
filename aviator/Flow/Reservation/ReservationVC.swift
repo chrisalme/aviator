@@ -22,10 +22,9 @@ class ReservationVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        authenticateAndCheckToken()
-        print("\(UD.shared.userId)")
+        checkingWelcome()
+        print("USERID - \(UD.shared.userId)")
         configureTableView()
-//        loadModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,28 +33,19 @@ class ReservationVC: UIViewController {
 
     }
 
+    private func checkingWelcome() {
+        let isFirstLaunch = UD.isFirstLaunch()
+        if isFirstLaunch {
+            let vc = WelcomeVC()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
+    }
+
     private func configureTableView() {
         contentView.reservTableView.dataSource = self
         contentView.reservTableView.delegate = self
         contentView.reservTableView.separatorStyle = .none
-    }
-
-    private func authenticateAndCheckToken() {
-        Task {
-            do {
-                try await auth.authenticate()
-                checkToken()
-            } catch {
-                print("Authentication failed. Error: \(error)")
-            }
-        }
-    }
-
-    private func checkToken() {
-        guard let token = auth.token else {
-            return
-        }
-        print("TOKEN - \(token)")
     }
     
     func loadModel() {
@@ -69,8 +59,6 @@ class ReservationVC: UIViewController {
         }
     }
 }
-
-
 
 extension ReservationVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,17 +79,17 @@ extension ReservationVC: UITableViewDataSource, UITableViewDelegate {
         return addNewCell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        
-//        let item = items[indexPath.row]
-//        
-//        let eventVC = EventVC(model: item)
-//        eventVC.model = item
-//        eventVC.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(eventVC, animated: true)
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let item = items[indexPath.row]
+        
+        let reservDetailVC = ReservDetailVC(model: item)
+        reservDetailVC.model = item
+        reservDetailVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(reservDetailVC, animated: true)
+        
+    }
 
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

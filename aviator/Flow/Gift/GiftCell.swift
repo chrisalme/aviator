@@ -29,7 +29,7 @@ class GiftCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 20)
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -86,15 +86,16 @@ class GiftCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.left.equalTo(giftImage.snp.right).offset(28)
+            make.right.equalToSuperview().offset(-12)
         }
         
         coinsLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.left.equalTo(giftImage.snp.right).offset(28)
         }
         
         cointsImageView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(24)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
             make.left.equalTo(coinsLabel.snp.right).offset(-8)
         }
     }
