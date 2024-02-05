@@ -174,7 +174,8 @@ class AddNewCell: UITableViewCell {
         }
         
         timeContainer.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview().offset(-8)
             make.width.equalTo(128)
             make.height.equalTo(40)
         }

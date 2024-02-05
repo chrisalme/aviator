@@ -133,7 +133,6 @@ class ReservDetailView: UIView {
         return label
     }()
 
-    
     private(set) lazy var backTableView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
@@ -154,16 +153,6 @@ class ReservDetailView: UIView {
         return view
     }()
 
-//    private(set) lazy var reservedBtn: UIButton = {
-//        let button = UIButton()
-//        button.setTitle("Reserved", for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//        button.backgroundColor = .customRed
-//        button.titleLabel?.font = UIFont.customFont(font: .mont, style: .semiBold, size: 20)
-//        button.layer.cornerRadius = 20
-//        return button
-//    }()
-    
     private(set) lazy var infoBtnRes: UIButton = {
         let button = UIButton()
         button.backgroundColor = .red
@@ -218,12 +207,11 @@ class ReservDetailView: UIView {
         return button
     }()
 
-
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         setupUI()
         setupConstraints()
+        adjustFontSizesForScreenSize()
     }
     
     required init?(coder: NSCoder) {
@@ -313,7 +301,8 @@ class ReservDetailView: UIView {
         }
         
         timeContainer.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview().offset(-8)
             make.width.equalTo(128)
             make.height.equalTo(40)
         }
@@ -358,7 +347,7 @@ class ReservDetailView: UIView {
         backTableView.snp.makeConstraints { make in
             make.top.equalTo(nameContainer.snp.bottom).offset(69)
             make.left.right.equalToSuperview().inset(20)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-169)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-100)
         }
 
         tableView.snp.makeConstraints { make in
@@ -403,18 +392,25 @@ class ReservDetailView: UIView {
             make.left.equalTo(infoBtnMyRes).offset(12)
             make.bottom.equalTo(backTableView).offset(-14)
         }
-        
-//        reservedBtn.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.width.equalTo(160)
-//            make.height.equalTo(48)
-//            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
-//        }
-        
+                
         for (index, circleBtn) in circleBtns.enumerated() {
             circleBtn.snp.makeConstraints { make in
                 make.centerX.equalTo(tableView).offset(142 * cos(CGFloat(index) * 2 * CGFloat.pi / 10))
                 make.centerY.equalTo(tableView).offset(92 * sin(CGFloat(index) * 2 * CGFloat.pi / 10))
+            }
+        }
+    }
+    
+    private func adjustFontSizesForScreenSize() {
+        let screenSize = UIScreen.main.bounds
+        let smallerScreenHeight: CGFloat = 812
+        
+        if screenSize.height < smallerScreenHeight {
+            
+            backTableView.snp.makeConstraints { make in
+                make.top.equalTo(nameContainer.snp.bottom).offset(24)
+                make.left.right.equalToSuperview().inset(20)
+                make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-100)
             }
         }
     }

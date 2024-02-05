@@ -33,7 +33,7 @@ class InfoView: UIView {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat elit, egestas in massa id, pellentesque feugiat dolor. Quisque eu lacus non sem commodo lobortis. Curabitur porttitor nisi quam, et ornare neque egestas eget. Fusce quis pellentesque sapien. Aliquam sed ligula sagittis, porta mauris ac, facilisis dolor. Nam quis sagittis lacus. Vestibulum ultrices consectetur mauris, at consequat nisi mattis id. Suspendisse consequat iaculis turpis. Pellentesque convallis tortor vel tortor congue rhoncus. Suspendisse sed mi mattis, egestas urna in, aliquet nisl. Curabitur nec enim tincidunt, pellentesque tellus viverra, placerat enim. Donec vitae feugiat lorem. Ut eu rhoncus quam. Duis quam ligula, pulvinar rhoncus aliquam in, pharetra eu neque. Vivamus non mi ante. Praesent quis ligula sit amet est imperdiet finibus pharetra. Suspendisse potenti. Integer semper feugiat sapien, in viverra mauris pellentesque ac. Sed et semper nisl. Cras vulputate convallis orci pharetra consequat."
         label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .regular, size: 16)
+        label.font = UIFont.customFont(font: .mont, style: .regular, size: 12)
         label.numberOfLines = 0
         return label
     }()
@@ -110,6 +110,7 @@ class InfoView: UIView {
         contentLabel.snp.makeConstraints { make in
             make.top.equalTo(subTitleLabel.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(40)
+            make.bottom.equalToSuperview().inset(56)
         }
     }
 }

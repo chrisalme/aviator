@@ -98,6 +98,7 @@ class BonusView: UIView {
         setupBonusCircle()
         setupUI()
         setUpConstraints()
+        adjustFontSizesForScreenSize()
     }
     
     required init?(coder: NSCoder) {
@@ -188,6 +189,20 @@ class BonusView: UIView {
         circles.forEach { circle in
             circle.snp.makeConstraints { make in
                 make.edges.equalToSuperview().inset(10)
+            }
+        }
+    }
+    
+    private func adjustFontSizesForScreenSize() {
+        let screenSize = UIScreen.main.bounds
+        let smallerScreenHeight: CGFloat = 812
+
+        if screenSize.height < smallerScreenHeight {
+            circleContainer.snp.makeConstraints { make in
+                make.width.equalTo(250)
+                make.height.equalTo(250)
+                make.centerX.equalToSuperview()
+                make.centerY.equalToSuperview().offset(24)
             }
         }
     }

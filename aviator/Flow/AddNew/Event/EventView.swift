@@ -81,7 +81,7 @@ class EventView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private lazy var timeContainer: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
@@ -124,7 +124,7 @@ class EventView: UIView {
         view.backgroundColor = .white.withAlphaComponent(0.08)
         return view
     }()
-
+    
     private(set) lazy var nameScoreLabel: UILabel = {
         let label = UILabel()
         label.text = "\(UD.shared.userName ?? "userName")"
@@ -133,7 +133,6 @@ class EventView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
     
     private(set) lazy var backTableView: UIView = {
         let view = UIView()
@@ -147,14 +146,14 @@ class EventView: UIView {
         view.backgroundColor = .white.withAlphaComponent(0.08)
         return view
     }()
-
+    
     private(set) lazy var tableView: UIView = {
         let view = UIView()
         view.backgroundColor = .customDarkRed
         view.layer.cornerRadius = 40
         return view
     }()
-
+    
     private(set) lazy var reservedBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Reserved", for: .normal)
@@ -171,7 +170,7 @@ class EventView: UIView {
         button.layer.cornerRadius = 5
         return button
     }()
-
+    
     private(set) lazy var redLabel: UILabel = {
         let label = UILabel()
         label.text = " - Seat reserved"
@@ -180,7 +179,7 @@ class EventView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private(set) lazy var infoBtnMyRes: UIButton = {
         let button = UIButton()
         button.backgroundColor = .yellow
@@ -196,7 +195,7 @@ class EventView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private(set) lazy var infoBtnFree: UIButton = {
         let button = UIButton()
         button.backgroundColor = .green
@@ -218,13 +217,12 @@ class EventView: UIView {
         button.setImage(.closeBtn, for: .normal)
         return button
     }()
-
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         setupUI()
         setupConstraints()
+        adjustFontSizesForScreenSize()
     }
     
     required init?(coder: NSCoder) {
@@ -278,7 +276,7 @@ class EventView: UIView {
             case .reservedByMe:
                 if reservation.userID == UD.shared.userId {
                     circleBtns[i].backgroundColor = .yellow
-
+                    
                 }else {
                     circleBtns[i].backgroundColor = .red
                 }
@@ -287,7 +285,7 @@ class EventView: UIView {
     }
     
     private func setupConstraints() {
-   
+        
         backView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -296,7 +294,7 @@ class EventView: UIView {
             make.left.equalToSuperview().offset(24)
             make.top.equalToSuperview().inset(56)
         }
-
+        
         titleEventLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(36)
             make.centerX.equalToSuperview()
@@ -314,7 +312,8 @@ class EventView: UIView {
         }
         
         timeContainer.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview().offset(-8)
             make.width.equalTo(128)
             make.height.equalTo(40)
         }
@@ -322,7 +321,7 @@ class EventView: UIView {
         timeLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-
+        
         dateScoreContainer.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalTo(timeContainer.snp.right).offset(4)
@@ -333,7 +332,7 @@ class EventView: UIView {
         dateScoreLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-
+        
         nameContainer.snp.makeConstraints { make in
             make.top.equalTo(dateContainer.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(20)
@@ -361,10 +360,10 @@ class EventView: UIView {
             make.left.right.equalToSuperview().inset(20)
             make.bottom.equalTo(reservedBtn.snp.top).offset(-69)
         }
-
+        
         tableView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().offset(-24)
-            make.centerX.equalToSuperview()
+            make.centerY.equalTo(backTableView).offset(-24)
+            make.centerX.equalTo(backTableView)
             make.width.equalTo(200)
             make.height.equalTo(100)
         }
@@ -375,7 +374,7 @@ class EventView: UIView {
             make.height.equalTo(15)
             make.width.equalTo(10)
         }
-
+        
         greenLabel.snp.makeConstraints { make in
             make.left.equalTo(infoBtnFree).offset(12)
             make.bottom.equalTo(backTableView).offset(-14)
@@ -416,6 +415,26 @@ class EventView: UIView {
             circleBtn.snp.makeConstraints { make in
                 make.centerX.equalTo(tableView).offset(142 * cos(CGFloat(index) * 2 * CGFloat.pi / 10))
                 make.centerY.equalTo(tableView).offset(92 * sin(CGFloat(index) * 2 * CGFloat.pi / 10))
+            }
+        }
+    }
+    
+    private func adjustFontSizesForScreenSize() {
+        let screenSize = UIScreen.main.bounds
+        let smallerScreenHeight: CGFloat = 812
+        
+        if screenSize.height < smallerScreenHeight {
+            reservedBtn.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.width.equalTo(160)
+                make.height.equalTo(48)
+                make.bottom.equalToSuperview().offset(-24)
+            }
+            
+            backTableView.snp.makeConstraints { make in
+                make.top.equalTo(nameContainer.snp.bottom).offset(8)
+                make.left.right.equalToSuperview().inset(20)
+                make.bottom.equalToSuperview().offset(-128)
             }
         }
     }
