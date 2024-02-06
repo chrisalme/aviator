@@ -91,7 +91,7 @@ class ProfileView: UIView,UITextFieldDelegate {
         
         balancelabel.snp.makeConstraints { (make) in
             make.top.equalTo(profileTextField.snp.bottom).offset(40)
-            make.left.equalToSuperview().inset(24)
+            make.centerX.equalToSuperview()
             make.height.equalTo(66)
         }
 

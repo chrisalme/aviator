@@ -9,6 +9,8 @@ import SnapKit
 class AddNewVC: UIViewController {
     
     var items = [AddNewModel]()
+    private var reservations: [EventReservation] = []
+
     let getService = GetService.shared
     
     var contentView: AddNewView {
@@ -41,7 +43,13 @@ class AddNewVC: UIViewController {
     func loadModel() {
         getService.fetchEvent { [weak self] event in
             guard let self = self else { return }
-            self.items = event
+            self.items = event.filter({ item in
+                //MARK: - Filters
+                let contains = item.reservations.contains { reservation in
+                    reservation.userID == UD.shared.userId
+                }
+                return !contains
+            })
             self.contentView.eventTableView.reloadData()
         } errorCompletion: { [weak self] error in
             guard self != nil else { return }
@@ -69,7 +77,15 @@ extension AddNewVC: UITableViewDataSource, UITableViewDelegate {
         return addNewCell
     }
     
-    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        // Укажите условие, при котором вы хотите скрыть ячейку
+//        if UD.shared.userId ==   { // замените shouldHideCell на ваше условие
+//            return 0
+//        } else {
+//            return 200 // верните высоту ячейки, если не хотите ее скрывать
+//        }
+//    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         

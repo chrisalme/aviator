@@ -31,9 +31,9 @@ class InfoView: UIView {
 
     private lazy var contentLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat elit, egestas in massa id, pellentesque feugiat dolor. Quisque eu lacus non sem commodo lobortis. Curabitur porttitor nisi quam, et ornare neque egestas eget. Fusce quis pellentesque sapien. Aliquam sed ligula sagittis, porta mauris ac, facilisis dolor. Nam quis sagittis lacus. Vestibulum ultrices consectetur mauris, at consequat nisi mattis id. Suspendisse consequat iaculis turpis. Pellentesque convallis tortor vel tortor congue rhoncus. Suspendisse sed mi mattis, egestas urna in, aliquet nisl. Curabitur nec enim tincidunt, pellentesque tellus viverra, placerat enim. Donec vitae feugiat lorem. Ut eu rhoncus quam. Duis quam ligula, pulvinar rhoncus aliquam in, pharetra eu neque. Vivamus non mi ante. Praesent quis ligula sit amet est imperdiet finibus pharetra. Suspendisse potenti. Integer semper feugiat sapien, in viverra mauris pellentesque ac. Sed et semper nisl. Cras vulputate convallis orci pharetra consequat."
+        label.text = "Welcome to our convenient application for reserving seats for a variety of entertainment events! We offer you a simple and effective way to book a place for interesting events and enjoy a unique atmosphere. \nWhat makes our app special? We have created a system of bonuses and pleasant gifts to make your participation in events even more enjoyable. With every booking, you earn bonus points, which can be exchanged for various amenities and additional bonuses. \nImmerse yourself in a world of fun and entertainment with our application, stay up to date with the main events and get the most out of your time spent at events. Join us and enjoy bright emotions with your friends and loved ones!"
         label.textColor = .white
-        label.font = UIFont.customFont(font: .mont, style: .regular, size: 12)
+        label.font = UIFont.customFont(font: .mont, style: .regular, size: 14)
         label.numberOfLines = 0
         return label
     }()

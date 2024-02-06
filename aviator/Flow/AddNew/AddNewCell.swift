@@ -131,7 +131,6 @@ class AddNewCell: UITableViewCell {
     }
     
     func setupUI(){
-        
         contentView.addSubview(addNewContainer)
         contentView.backgroundColor = .clear
         contentView.layer.cornerRadius = 12
@@ -181,7 +180,8 @@ class AddNewCell: UITableViewCell {
         }
         
         timeScoreLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
 
         dateScoreContainer.snp.makeConstraints { make in

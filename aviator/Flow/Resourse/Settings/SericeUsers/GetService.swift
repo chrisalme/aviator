@@ -53,7 +53,6 @@ class GetService {
                 let gifts = try decoder.decode([GiftsModel].self, from: data)
                 DispatchQueue.main.async {
                     successCompletion(gifts)
-                    print("Gifts - \(gifts)")
                 }
             }catch {
                 print("error", error)
@@ -100,7 +99,6 @@ class GetService {
                 let event = try decoder.decode([AddNewModel].self, from: data)
                 DispatchQueue.main.async {
                     successCompletion(event)
-                    print("EVENTS - \(event)")
                 }
             }catch {
                 print("error", error)
@@ -147,7 +145,6 @@ class GetService {
                 let reserv = try decoder.decode([AddNewModel].self, from: data)
                 DispatchQueue.main.async {
                     successCompletion(reserv)
-                    print("Reserv - \(reserv)")
                 }
             }catch {
                 print("error", error)

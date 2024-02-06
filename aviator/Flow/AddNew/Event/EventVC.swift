@@ -123,8 +123,8 @@ class EventVC: UIViewController {
 
     @objc func buttonTapped() {
         fetchReserv()
-        navigationController?.popViewController(animated: true)
-        
+        let vc = TabBarRootController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func fetchReserv() {

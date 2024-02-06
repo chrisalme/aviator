@@ -51,7 +51,6 @@ class OnboardVC: UIViewController {
         guard let token = auth.token else {
             return
         }
-        print("TOKEN - \(token)")
     }
 
     func animaPB() {

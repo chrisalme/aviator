@@ -126,7 +126,7 @@ class ReservDetailView: UIView {
 
     private(set) lazy var nameScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(UD.shared.userName ?? "userName")"
+        label.text = "\(UD.shared.userName ?? "Name")"
         label.textColor = .white
         label.font = UIFont.customFont(font: .mont, style: .semiBold, size: 16)
         label.numberOfLines = 0
