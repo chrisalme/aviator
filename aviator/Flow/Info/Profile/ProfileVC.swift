@@ -72,14 +72,43 @@ class ProfileVC: UIViewController {
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate {
+    
+    func saveImageToLocal(image: UIImage) {
+        if let data = image.jpegData(compressionQuality: 1.0) {
+            let fileURL = getDocumentsDirectory().appendingPathComponent("\(UD.shared.userId).png")
+            do {
+                try data.write(to: fileURL)
+            } catch {
+                print("Error saving image to local storage: \(error)")
+            }
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func getImageFromLocal() -> UIImage? {
+        let fileURL = getDocumentsDirectory().appendingPathComponent("\(UD.shared.userId).png")
+        do {
+            let data = try Data(contentsOf: fileURL)
+            return UIImage(data: data)
+        } catch {
+            print("Error loading image from local storage: \(error)")
+            return nil
+        }
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if info[.originalImage] is UIImage {
-            
+        if let image = info[.originalImage] as? UIImage {
+            contentView.profileBtn.setImage(image, for: .normal)
+            saveImageToLocal(image: image)
         }
         
         dismiss(animated: true, completion: nil)
     }
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
